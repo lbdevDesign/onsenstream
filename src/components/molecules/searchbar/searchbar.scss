@@ -1,0 +1,36 @@
+.inputSearch {
+    background-color: $darkLight;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    &__input {
+        height: 44px;
+        border: none;
+        width: 80%;
+        margin: 0 8px;
+        background-color: $darkLight;
+        color: $white;
+        font-size: 16px;
+        font-family: $manrope;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: $grey;
+        }
+    }
+    &__button {
+        background-color: $primary;
+        border: none;
+        border-radius: 4px;
+        height: 44px;
+        width: 44px;
+        &--icon {
+            color: $white;
+            height: 24px;
+        }
+    }
+}

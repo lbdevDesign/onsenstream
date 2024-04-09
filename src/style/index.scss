@@ -1,0 +1,30 @@
+//Settings
+@import './settings/colors.scss';
+@import './settings/fonts.scss';
+@import './settings/mediaQueries.scss';
+
+//Pages
+@import "../pages/homepage/App.scss";
+
+//Organisms
+@import "../components/organisms/header/header.scss";
+
+//Molecules
+@import "../components/molecules/searchbar/searchbar.scss";
+
+//Atoms
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+

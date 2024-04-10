@@ -8,11 +8,14 @@
 
 //Organisms
 @import "../components/organisms/header/header.scss";
+@import "../components/organisms/heroCarousel/heroCarousel.scss";
 
 //Molecules
 @import "../components/molecules/searchbar/searchbar.scss";
 
 //Atoms
+@import "../components/atoms/ctabutton/ctabutton.scss";
+@import "../components/atoms/functionalbutton/funcbutton.scss";
 
 
 * {
@@ -25,6 +28,12 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.icons {
+  height: 24px;
+  color: $white;
+  vertical-align: middle;
 }
 
 

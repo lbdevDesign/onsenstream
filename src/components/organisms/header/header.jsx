@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-//Components
+//Atoms
+import FuncButton from '../../atoms/functionalbutton/funcbutton';
+
+//Molecules
 import { Searchbar } from '../../molecules/searchbar/searchbar';
 
 //Assets
@@ -15,7 +18,11 @@ function Header() {
 
     function display() {
         setSearchbar(value=>!value)
-      }
+    }
+
+    function handleAccountClick() {
+        console.log("J'accède à mon compte");
+    }
 
     return(
         <div className="header">
@@ -33,10 +40,9 @@ function Header() {
                         <div className='header__cta__searchbar'>
                             <Searchbar placeholder='Film, genre, acteur...'/>
                         </div>
-                        <button className='header__cta__account'>
+                        <FuncButton onClick={handleAccountClick}>
                             <UserIcon className="icons" alt='Mon compte' />
-                        </button>
-                        
+                        </FuncButton>
                     </>
                 )}    
             </div>

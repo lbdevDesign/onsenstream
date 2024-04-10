@@ -11,24 +11,16 @@
     }
     &__logo {
         z-index: 2;
-        height: 44px;
+        height: 32px;
+        @include Desktop {
+            height: 38px;
+        }
     }
     &__cta {
         z-index: 2;
         display: flex;
         align-items: center;
-        &__account {
-            background-color: transparent;
-            margin-left: 8px;
-            border: none;
-            height: 44px;
-            width: 44px;
-            border-radius: 4px;
-            &--icon {
-                color: $white;
-                height: 24px;
-            }
-        }
+        gap: 8px;
         &__searchbar {
             display: none;
             @include tabletLandscape {

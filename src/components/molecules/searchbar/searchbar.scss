@@ -22,15 +22,4 @@
             color: $grey;
         }
     }
-    &__button {
-        background-color: $primary;
-        border: none;
-        border-radius: 4px;
-        height: 44px;
-        width: 44px;
-        &--icon {
-            color: $white;
-            height: 24px;
-        }
-    }
 }

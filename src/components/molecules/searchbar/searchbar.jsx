@@ -1,15 +1,23 @@
 import React from "react";
 
+//Atoms
+import CtaButton from "../../atoms/ctabutton/ctabutton";
+
 //Assets
 import {MagnifyingGlassIcon} from '@heroicons/react/24/solid';
 
 export const Searchbar = (props) => {
+
+    const handleClick = () => {
+        console.log('button clicked !');
+    }
+
     return (
         <div className="inputSearch">
             <input className="inputSearch__input" placeholder={props.placeholder} />
-            <button className="inputSearch__button">
-                <MagnifyingGlassIcon className='inputSearch__button--icon' alt="Search"/>
-            </button>
+            <CtaButton variant="square" onClick={handleClick}>
+                <MagnifyingGlassIcon className="icons" alt="Search"/>
+            </CtaButton>
         </div>
     )
 };

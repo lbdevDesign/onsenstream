@@ -7,6 +7,9 @@ import CtaButton from '../../atoms/ctabutton/ctabutton';
 import FuncButton from "../../atoms/functionalbutton/funcbutton";
 import IndexButton from '../../atoms/indexbutton/indexbutton';
 
+//Molecules
+import CarouselNav from '../../molecules/carouselnav/carouselnav';
+
 //Data
 import heroCarouselData from '../../../data/heroCarouselItems';
 
@@ -20,20 +23,6 @@ export const HeroCarousel = () => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
-
-    const isDesktop = useMediaQuery({
-        query: '(min-width: 900px)'
-      })
-
-    const updateIndex = (newIndex) => {
-        if (newIndex < 0) {
-            newIndex = heroCarouselData.length - 1;
-        } else if (newIndex >= heroCarouselData.length) {
-            newIndex = 0;
-        }
-
-        setActiveIndex(newIndex);
-    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -53,6 +42,15 @@ export const HeroCarousel = () => {
         onSwipedLeft: () => updateIndex(activeIndex + 1),
         onSwipedRight: () => updateIndex(activeIndex - 1)
     });
+
+    const updateIndex = (newIndex) => {
+        if (newIndex < 0) {
+            newIndex = heroCarouselData.length - 1;
+        } else if (newIndex >= heroCarouselData.length) {
+            newIndex = 0;
+        }
+        setActiveIndex(newIndex);
+    }
 
     function handleDecouverteClick() {
         console.log("vers la page du film");
@@ -95,7 +93,12 @@ export const HeroCarousel = () => {
                 ))}
                 
             </div>
-            <div className="heroCarousel__index">
+            <CarouselNav 
+                currentIndex={activeIndex} 
+                data={heroCarouselData} 
+                updateIndex={updateIndex}
+            />
+            {/* <div className="heroCarousel__index">
                 {isDesktop && (
                     <FuncButton onClick={() => { updateIndex(activeIndex - 1) }}>
                         <ArrowLeftIcon className="icons" alt="Précédent" />
@@ -117,7 +120,7 @@ export const HeroCarousel = () => {
                         <ArrowRightIcon className="icons" alt="Précédent" />
                     </FuncButton>
                 )}
-            </div>
+            </div> */}
         </div>
     )
 };

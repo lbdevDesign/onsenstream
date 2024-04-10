@@ -1,7 +1,6 @@
 import React from "react";
 
 function IndexButton({ onClick, ...props}) {
-    console.log(props.data);
     return(
         <button key={props.key} className="indexbutton"
         onClick={onClick}>

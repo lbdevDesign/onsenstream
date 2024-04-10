@@ -1,0 +1,18 @@
+.carouselindex {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 24px 48px;
+    @include tabletLandscape {
+        justify-content: space-between;
+    }
+    &__indicator {
+        align-self: center;
+        > button {
+            margin: 8px;
+        }
+    }
+}

@@ -10,8 +10,22 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <div className="hero">
+      <div className="App__header">
+        <Header />
+      </div>
+      <div className="App__hero">
+        <HeroCarousel />
+      </div>
+      <div className="App__hero">
+        <HeroCarousel />
+      </div>
+      <div className="App__hero">
+        <HeroCarousel />
+      </div>
+      <div className="App__hero">
+        <HeroCarousel />
+      </div>
+      <div className="App__hero">
         <HeroCarousel />
       </div>
     </div>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Searchbar } from '../../molecules/searchbar/searchbar';
 
 //Assets
-import movixlogo from '../../../assets/MOVIX.svg';
+import osesLogo from '../../../assets/osesLogo.svg';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import {XMarkIcon} from '@heroicons/react/24/outline';
 import {UserIcon} from '@heroicons/react/24/outline';
@@ -19,7 +19,7 @@ function Header() {
 
     return(
         <div className="header">
-            <img src={movixlogo} className='header__logo' alt='Logo Movix' />
+            <img src={osesLogo} className='header__logo' alt="Logo On s'en stream" />
             <div className='header__cta'>
                 {showSearchbar ? (
                     <button className='header__cta__close' onClick={display}>
@@ -28,13 +28,13 @@ function Header() {
                 ) : (
                     <>
                         <button className='header__cta__search' onClick={display}>
-                            <MagnifyingGlassIcon className='header__cta__search--icon' alt='Search' />
+                            <MagnifyingGlassIcon className="icons" alt='Search' />
                         </button>
                         <div className='header__cta__searchbar'>
                             <Searchbar placeholder='Film, genre, acteur...'/>
                         </div>
                         <button className='header__cta__account'>
-                            <UserIcon className='header__cta__account--icon' alt='Mon compte' />
+                            <UserIcon className="icons" alt='Mon compte' />
                         </button>
                         
                     </>

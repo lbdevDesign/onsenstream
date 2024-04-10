@@ -1,0 +1,13 @@
+.funcbutton {
+    height: 44px;
+    width: 44px;
+    justify-self: right;
+    background-color: $dark;
+    border: solid 2px $darkLight;
+    border-radius: 4px;
+    cursor: pointer;
+    &:active {
+        border: solid 2px $primary; 
+        transform: translateY(2px);
+    }
+}

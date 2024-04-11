@@ -3,16 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-//Assets
-import { ClockIcon } from '@heroicons/react/24/solid';
-import { HandThumbUpIcon } from '@heroicons/react/24/solid';
-import {ArrowLeftIcon} from '@heroicons/react/24/outline';
-import {ArrowRightIcon} from '@heroicons/react/24/outline';
-
 //Molecules
 import SliderNav from "../../molecules/sliderNav/sliderNav";
+import MovieCard from "../../molecules/cards/movieCard";
 
-function MovieCarousel({ title, movies }) {
+function MovieSlider({ title, movies }) {
 
   const sliderRef = useRef(null);
 
@@ -103,30 +98,14 @@ function MovieCarousel({ title, movies }) {
       </div>
 
       <Slider ref={sliderRef} className="movieCarousel__inner" {...settings}>
-
         {movies.map((item) => (
-          <div key={item.id} className="movieCarousel__item">
-            <img src={item.img} className="movieCarousel__item__img" alt={item.title}/>
-            <p className="movieCarousel__item__title">{item.title}</p>
-            <div className="movieCarousel__item__infos">
-              <div className="movieCarousel__item__infos__info">
-                <ClockIcon className="movieCarousel__item__icon" alt="Durée"/>
-                <p className="movieCarousel__item__text">{item.duration}</p>
-              </div>
-              <div className="movieCarousel__item__infos__info">
-                <img src={item.plateform} className="movieCarousel__item__streaming" alt="Likes"/>
-                <HandThumbUpIcon className="movieCarousel__item__icon" alt="Likes"/>
-                <p className="movieCarousel__item__text">{item.likes}</p>
-              </div>
-            </div>
-          </div>
+          <MovieCard key={item.id} {...item}/>
         ))}
-      
       </Slider>
         
     </div>
   )
 }
 
-export default MovieCarousel;
+export default MovieSlider;
 

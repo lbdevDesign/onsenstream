@@ -16,18 +16,6 @@ function App() {
       <div className="App__hero">
         <HeroCarousel />
       </div>
-      <div className="App__hero">
-        <HeroCarousel />
-      </div>
-      <div className="App__hero">
-        <HeroCarousel />
-      </div>
-      <div className="App__hero">
-        <HeroCarousel />
-      </div>
-      <div className="App__hero">
-        <HeroCarousel />
-      </div>
     </div>
   );
 }

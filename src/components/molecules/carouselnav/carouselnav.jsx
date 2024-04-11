@@ -30,7 +30,8 @@ function CarouselNav({ data, currentIndex, updateIndex }) {
                             key={item.id} 
                             onClick={() => { updateIndex(index)}} 
                             index={index} 
-                            data={currentIndex}/>
+                            data={currentIndex}
+                        />
                     )
                 })}
             </div>

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive'
 
 //Atoms
-import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton";
-import IndexButton from "../../atoms/buttons/indexbutton/indexbutton";
+import FuncButton from "../../atoms/functionalbutton/funcbutton";
+import IndexButton from "../../atoms/indexbutton/indexbutton";
 
 //Assets
 import {ArrowLeftIcon} from '@heroicons/react/24/outline';

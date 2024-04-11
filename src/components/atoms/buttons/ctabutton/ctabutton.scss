@@ -1,0 +1,14 @@
+.ctabutton {
+    background-color: $primary;
+    border: none;
+    border-radius: 4px;
+    color: $white;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+        filter: brightness(110%);
+    }
+    &:active {
+        transform: translateY(2px);
+    }
+}

@@ -3,9 +3,8 @@ import { useSwipeable } from 'react-swipeable';
 import { useMediaQuery } from 'react-responsive'
 
 //Atoms
-import CtaButton from '../../atoms/ctabutton/ctabutton';
-import FuncButton from "../../atoms/functionalbutton/funcbutton";
-import IndexButton from '../../atoms/indexbutton/indexbutton';
+import CtaButton from '../../atoms/buttons/ctabutton/ctabutton';
+import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton";
 
 //Molecules
 import CarouselNav from '../../molecules/carouselnav/carouselnav';
@@ -16,8 +15,6 @@ import heroCarouselData from '../../../data/heroCarouselItems';
 //Assets
 import {HandThumbUpIcon} from '@heroicons/react/24/outline';
 import {PlusIcon} from '@heroicons/react/24/outline';
-import {ArrowLeftIcon} from '@heroicons/react/24/outline';
-import {ArrowRightIcon} from '@heroicons/react/24/outline';
 
 export const HeroCarousel = () => {
 

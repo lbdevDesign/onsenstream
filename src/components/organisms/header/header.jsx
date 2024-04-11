@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 //Atoms
-import FuncButton from '../../atoms/functionalbutton/funcbutton';
+import FuncButton from '../../atoms/buttons/functionalbutton/funcbutton';
 
 //Molecules
 import { Searchbar } from '../../molecules/searchbar/searchbar';

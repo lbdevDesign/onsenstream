@@ -1,7 +1,7 @@
 import React from "react";
 
 //Atoms
-import CtaButton from "../../atoms/ctabutton/ctabutton";
+import CtaButton from "../../atoms/buttons/ctabutton/ctabutton";
 
 //Assets
 import {MagnifyingGlassIcon} from '@heroicons/react/24/solid';

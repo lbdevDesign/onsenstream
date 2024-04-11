@@ -1,0 +1,109 @@
+.movieCarousel {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 48px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        &__title {
+            color: $white;
+        }
+    }
+    &__inner {
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+    }
+    &__item {
+        background-color: $darkMedium;
+        border: solid 1px $darkLight;
+        width: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        &__img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        &__title {
+            text-align: center;
+            color: $white;
+            font-family: $manrope;
+            font-size: 16px;
+            font-weight: 300;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 12px;
+        }
+        &__infos {
+            display: flex;
+            justify-content: space-between;
+            &__info {
+                display: flex;
+                background-color: $dark;
+                border: solid 1px $darkLight;
+                border-radius: 50px;
+                padding: 4px 8px 4px 4px;
+                align-self: center;
+            } 
+        }
+        &__streaming {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+        &__icon {
+            width: 16px;
+            color: $grey;
+        }
+        &__text {
+            margin-left: 4px;
+            font-size: 12px;
+            color: $grey;
+        }
+    }
+    &__nav {
+        &__button {
+            display: none;
+            height: 44px;
+            width: 24px;
+            background-color: $dark;
+            border: solid 2px $darkLight;
+            border-radius: 4px;
+            align-self: center;
+            cursor: pointer;
+            @include tabletLandscape {
+                display: block;
+            }
+            &:active {
+                border: solid 2px $primary; 
+                transform: translateY(2px);   
+            }
+            &--icon {
+                height: 16px;
+                color: $white;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.slick-slide > div {
+    margin: 0 12px;
+  }
+
+.slick-list {
+    margin: 0 -12px;
+}
+
+.slick-dots-index {
+    background-color: $white;
+    height: 4px;
+    width: 12px;
+}

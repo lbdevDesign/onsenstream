@@ -3,11 +3,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+//Data
+import topMoviesData from "../../../data/topMovies";
+
 //Molecules
 import SliderNav from "../../molecules/sliderNav/sliderNav";
-import MovieCard from "../../molecules/cards/moviecard/movieCard";
+import GenreCard from "../../molecules/cards/genrecard/genreCard";
 
-function MovieSlider({ title, movies }) {
+function GenreSlider({ title }) {
 
   const sliderRef = useRef(null);
 
@@ -87,25 +90,32 @@ function MovieSlider({ title, movies }) {
   }
 
   return (
-    <div className="movieSlider">
-      <div className="movieSlider__header">
-        <h2 className="movieSlider__header__title">{title}</h2>
-        <SliderNav 
-          onClickLeft={()=>sliderRef.current.slickPrev()} 
-          onClickRight={()=>sliderRef.current.slickNext()}
-          onClick={handleDiscoverClick}
-        />
-      </div>
+    <div className="genreSlider">
+        <div className="genreSlider__header">
+            <h2 className="genreSlider__header__title">{title}</h2>
+            <SliderNav 
+            onClickLeft={()=>sliderRef.current.slickPrev()} 
+            onClickRight={()=>sliderRef.current.slickNext()}
+            onClick={handleDiscoverClick}
+            />
+        </div>
 
-      <Slider ref={sliderRef} className="movieSlider__inner" {...settings}>
-        {movies.map((item) => (
-          <MovieCard key={item.id} {...item}/>
-        ))}
-      </Slider>
+        <Slider ref={sliderRef} className="genreSlider__inner" {...settings}>
+            <GenreCard genre="horror" movies={topMoviesData}/>
+            <GenreCard genre="action" movies={topMoviesData}/>
+            <GenreCard genre="comic" movies={topMoviesData}/>
+            <GenreCard genre="love" movies={topMoviesData}/>
+            <GenreCard genre="aventure" movies={topMoviesData}/>
+            <GenreCard genre="horror" movies={topMoviesData}/>
+            <GenreCard genre="action" movies={topMoviesData}/>
+            <GenreCard genre="comic" movies={topMoviesData}/>
+            <GenreCard genre="love" movies={topMoviesData}/>
+            <GenreCard genre="aventure" movies={topMoviesData}/>
+        </Slider>
         
     </div>
   )
 }
 
-export default MovieSlider;
+export default GenreSlider;
 

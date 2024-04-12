@@ -1,7 +1,7 @@
 import React from "react";
 
 //Atoms
-import CardTag from "../../atoms/tags/cardtags/cardTag";
+import CardTag from "../../../atoms/tags/cardtags/cardTag";
 
 //Assets
 import { ClockIcon } from '@heroicons/react/24/solid';

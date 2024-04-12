@@ -3,6 +3,7 @@ import React from "react";
 //Organisms
 import Header from "../../components/organisms/header/header";
 import { HeroCarousel } from "../../components/organisms/heroCarousel/heroCarousel";
+import GenreSlider from "../../components/organisms/genreslider/genreSlider";
 import MovieSlider from "../../components/organisms/movieSlider/movieSlider";
 
 //Data
@@ -21,6 +22,7 @@ function App() {
         <HeroCarousel />
       </div>
       <div className="App__movies">
+        <GenreSlider title="Films par genre" />
         <MovieSlider title='Les mieux notés' movies={topMoviesData || []}/>
         <MovieSlider title='Nouveautés' movies={newMoviesData || []} />
       </div>

@@ -10,18 +10,21 @@
 @import "../components/organisms/header/header.scss";
 @import "../components/organisms/heroCarousel/heroCarousel.scss";
 @import "../components/organisms/movieSlider/movieSlider.scss";
-@import "../components/molecules/cards/movieCard.scss";
+@import "../components/organisms/genreslider/genreSlider.scss";
 
 //Molecules
 @import "../components/molecules/searchbar/searchbar.scss";
 @import "../components/molecules/carouselnav/carouselnav.scss";
 @import "../components/molecules/sliderNav/sliderNav.scss";
+@import "../components/molecules/cards/moviecard/movieCard.scss";
+@import "../components/molecules/cards/genrecard/genreCard.scss";
 
 //Atoms
 @import "../components/atoms/buttons/ctabutton/ctabutton.scss";
 @import "../components/atoms/buttons/functionalbutton/funcbutton.scss";
 @import "../components/atoms/buttons/indexbutton/indexbutton.scss";
 @import "../components/atoms/tags/cardtags/cardTag.scss";
+
 
 
 * {

@@ -6,6 +6,9 @@ import { HeroCarousel } from "../../components/organisms/heroCarousel/heroCarous
 import GenreSlider from "../../components/organisms/genreslider/genreSlider";
 import MovieSlider from "../../components/organisms/movieSlider/movieSlider";
 
+//Atoms
+import SwitchButton from "../../components/atoms/buttons/switchbutton/switchbutton";
+
 function App() {
   const [movieGenres, setMovieGenres] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
@@ -25,7 +28,7 @@ function App() {
     .then(response => setMovieGenres(response.genres))
     .catch(err => console.error(err));
 
-    fetch('https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1', options)
+    fetch('https://api.themoviedb.org/3/trending/movie/week?language=fr-FR', options)
     .then(response => response.json())
     .then(response => setPopularMovies(response.results))
     .catch(err => console.error(err));
@@ -48,10 +51,13 @@ function App() {
       <div className="App__hero">
         <HeroCarousel movies={top5PopularMovies}/>
       </div>
+      <div className="App__switch">
+        <SwitchButton />
+      </div>
       <div className="App__movies">
-        <GenreSlider title="Genres" movieGenres={movieGenres}/>
-        <MovieSlider title='Populaires' movies={popularMovies || []} />
-        <MovieSlider title='Mieux notés' movies={topMovies || []}/>
+        <GenreSlider title="Films par genres" movieGenres={movieGenres}/>
+        <MovieSlider title='Films populaires' movies={popularMovies || []} />
+        <MovieSlider title='Films les mieux notés' movies={topMovies || []}/>
       </div>
     </div>
   );

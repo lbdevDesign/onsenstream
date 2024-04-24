@@ -1,26 +1,26 @@
-import React from "react";
-
-//Atoms
-import CardTag from "../../../atoms/tags/cardtags/cardTag";
-
-//Assets
-import { ClockIcon } from '@heroicons/react/24/solid';
-import { HandThumbUpIcon } from '@heroicons/react/24/solid';
+import React, { useState, useEffect } from "react";
 
 function MovieCard({ ...item }) {
+    const [isUpcoming, setIsUpcoming] = useState(false);
 
-    const coverPath = `https://image.tmdb.org/t/p/w500${item.poster_path}`
+    const coverPath = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
+
+    const today = new Date();
+    const formattedToday = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
+    
+    useEffect(() => {
+        if (item.release_date >= formattedToday) setIsUpcoming(true);
+    }, [])
+    
+    console.log(item);
 
     return(
         <a className="moviecard">
-            <img src={coverPath} className="moviecard__img" alt={item.title}/>
-            <p className="moviecard__title">{item.title}</p>
-            <div className="moviecard__infos">
-                <CardTag text={item.likes}>
-                    <HandThumbUpIcon className="moviecard__infos__icon" alt="Likes"/>
-                    <p>{item.vote_average} / 10</p>
-                </CardTag>
+            <div className="moviecard__imgbox">
+                <img src={coverPath} className="moviecard__imgbox__img" alt={item.title}/>
+                { isUpcoming && (<p className="moviecard__imgbox__soon">bientôt</p> )}
             </div>
+            <p className="moviecard__title">{item.title}</p>
         </a>
     )
 }

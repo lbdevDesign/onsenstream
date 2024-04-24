@@ -6,11 +6,24 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
-    &__img {
-        width: 100%;
-        aspect-ratio: 2 / 3;
-        border-radius: 8px;
-        margin-bottom: 12px;
+    &__imgbox {
+        position: relative;
+        &__soon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: $primary;
+            color: $white;
+            font-weight: $medium;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        &__img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
     }
     &__title {
         text-align: center;
@@ -22,19 +35,5 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin-bottom: 12px;
-    }
-    &__infos {
-        display: flex;
-        justify-content: space-between;
-        &__streaming {
-            width: 16px;
-            height: 16px;
-            margin-right: 4px;
-        }
-        &__icon {
-            width: 16px;
-            color: $grey;
-            margin-right: 4px;
-        }
     }
 }

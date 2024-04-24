@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive'
 
 //Atoms
 import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton";

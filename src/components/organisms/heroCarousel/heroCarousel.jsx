@@ -16,7 +16,7 @@ import heroCarouselData from '../../../data/heroCarouselItems';
 import {HandThumbUpIcon} from '@heroicons/react/24/outline';
 import {PlusIcon} from '@heroicons/react/24/outline';
 
-export const HeroCarousel = () => {
+export const HeroCarousel = ({ movies }) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
@@ -42,8 +42,8 @@ export const HeroCarousel = () => {
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
-            newIndex = heroCarouselData.length - 1;
-        } else if (newIndex >= heroCarouselData.length) {
+            newIndex = movies.length - 1;
+        } else if (newIndex >= movies.length) {
             newIndex = 0;
         }
         setActiveIndex(newIndex);
@@ -69,21 +69,18 @@ export const HeroCarousel = () => {
             <div className="heroCarousel__inner"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
 
-                {heroCarouselData.map((item) => (
+                {movies.map((item) => (
                     <div key={item.id} className="heroCarousel__item" >
-                        <img src={item.img} className="heroCarousel__item__img" alt={item.alt}/>
+                        <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="heroCarousel__item__img" alt={item.title}/>
                         <div className="heroCarousel__item__img--overlay"></div>
                         <div className="heroCarousel__item__content">
                             <h2 className="heroCarousel__item__content--title">{item.title}</h2>
-                            <p className="heroCarousel__item__content--description">{item.description}</p>
+                            <p className="heroCarousel__item__content--description">{item.overview}</p>
                             <div className="heroCarousel__item__content__cta">
                                 <CtaButton onClick={handleDecouverteClick}>Découvrir</CtaButton>
-                                <FuncButton onClick={handleLikeClick}>
-                                    <HandThumbUpIcon className="icons" alt="Like" />
-                                </FuncButton>
-                                <FuncButton onClick={handleAddClick}>
+                                {/* <FuncButton onClick={handleAddClick}>
                                     <PlusIcon className="icons" alt="Ajouter" />
-                                </FuncButton>
+                                </FuncButton> */}
                             </div>
                         </div>
                     </div>
@@ -92,7 +89,7 @@ export const HeroCarousel = () => {
             </div>
             <CarouselNav 
                 currentIndex={activeIndex} 
-                data={heroCarouselData} 
+                data={movies} 
                 updateIndex={updateIndex}
             />
             {/* <div className="heroCarousel__index">

@@ -37,13 +37,16 @@ function App() {
 
   }, [])
 
+  popularMovies.sort((a, b) => b.popularity - a.popularity);
+  const top5PopularMovies = popularMovies.slice(0, 5);
+
   return (
     <div className="App">
       <div className="App__header">
         <Header />
       </div>
       <div className="App__hero">
-        <HeroCarousel />
+        <HeroCarousel movies={top5PopularMovies}/>
       </div>
       <div className="App__movies">
         <GenreSlider title="Genres" movieGenres={movieGenres}/>

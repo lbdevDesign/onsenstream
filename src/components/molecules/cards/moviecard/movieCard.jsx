@@ -20,7 +20,7 @@ function MovieCard({ ...item }) {
                 <img src={coverPath} className="moviecard__imgbox__img" alt={item.title}/>
                 { isUpcoming && (<p className="moviecard__imgbox__soon">bientôt</p> )}
             </div>
-            <p className="moviecard__title">{item.title}</p>
+            {/* <p className="moviecard__title">{item.title}</p> */}
         </a>
     )
 }

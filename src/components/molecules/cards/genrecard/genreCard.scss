@@ -1,5 +1,4 @@
 .genrecard {
-    position: relative;
     box-sizing: border-box;
     background-color: $darkMedium;
     border: solid 1px $darkLight;
@@ -8,37 +7,7 @@
     display: flex;
     flex-direction: column;
     padding: 12px;
-    &__imggrid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 8px;
-        grid-row-gap: 8px;
-        &__item {
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 4px;
-            height: 100%;
-            width: 100%;
-        }
-    }
-    &__overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(180deg, rgba(26,26,26,0), rgba(26,26,26,1));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     &__title {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         text-align: center;
         color: $white;
         font-family: $manrope;
@@ -49,6 +18,5 @@
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-bottom: 12px;
     }
 }

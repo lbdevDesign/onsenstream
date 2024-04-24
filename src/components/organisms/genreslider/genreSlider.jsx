@@ -1,16 +1,18 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-//Data
-import topMoviesData from "../../../data/topMovies";
+import { useMediaQuery } from 'react-responsive';
 
 //Molecules
 import SliderNav from "../../molecules/sliderNav/sliderNav";
 import GenreCard from "../../molecules/cards/genrecard/genreCard";
 
-function GenreSlider({ title }) {
+function GenreSlider({ title, movieGenres }) {
+
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 900px)'
+  })
 
   const sliderRef = useRef(null);
 
@@ -93,24 +95,30 @@ function GenreSlider({ title }) {
     <div className="genreSlider">
         <div className="genreSlider__header">
             <h2 className="genreSlider__header__title">{title}</h2>
-            <SliderNav 
-            onClickLeft={()=>sliderRef.current.slickPrev()} 
-            onClickRight={()=>sliderRef.current.slickNext()}
-            onClick={handleDiscoverClick}
-            />
+            {isDesktop && (
+              <SliderNav 
+              onClickLeft={()=>sliderRef.current.slickPrev()} 
+              onClickRight={()=>sliderRef.current.slickNext()}
+              onClick={handleDiscoverClick}
+              />
+            )}
         </div>
 
         <Slider ref={sliderRef} className="genreSlider__inner" {...settings}>
-            <GenreCard genre="horror" movies={topMoviesData}/>
-            <GenreCard genre="action" movies={topMoviesData}/>
-            <GenreCard genre="comic" movies={topMoviesData}/>
-            <GenreCard genre="love" movies={topMoviesData}/>
-            <GenreCard genre="aventure" movies={topMoviesData}/>
-            <GenreCard genre="horror" movies={topMoviesData}/>
-            <GenreCard genre="action" movies={topMoviesData}/>
-            <GenreCard genre="comic" movies={topMoviesData}/>
-            <GenreCard genre="love" movies={topMoviesData}/>
-            <GenreCard genre="aventure" movies={topMoviesData}/>
+          {movieGenres && movieGenres.map((item) => (
+            <GenreCard key={item.id} genre={item.name} />
+          ))}
+    
+            {/* <GenreCard genre="horror" />
+            <GenreCard genre="action" />
+            <GenreCard genre="comic" />
+            <GenreCard genre="love" />
+            <GenreCard genre="aventure" />
+            <GenreCard genre="horror" />
+            <GenreCard genre="action" />
+            <GenreCard genre="comic" />
+            <GenreCard genre="love" />
+            <GenreCard genre="aventure" /> */}
         </Slider>
         
     </div>

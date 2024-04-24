@@ -2,12 +2,17 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useMediaQuery } from 'react-responsive';
 
 //Molecules
 import SliderNav from "../../molecules/sliderNav/sliderNav";
 import MovieCard from "../../molecules/cards/moviecard/movieCard";
 
 function MovieSlider({ title, movies }) {
+
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 900px)'
+  })
 
   const sliderRef = useRef(null);
 
@@ -90,11 +95,13 @@ function MovieSlider({ title, movies }) {
     <div className="movieSlider">
       <div className="movieSlider__header">
         <h2 className="movieSlider__header__title">{title}</h2>
-        <SliderNav 
-          onClickLeft={()=>sliderRef.current.slickPrev()} 
-          onClickRight={()=>sliderRef.current.slickNext()}
-          onClick={handleDiscoverClick}
-        />
+        {isDesktop && (
+          <SliderNav 
+            onClickLeft={()=>sliderRef.current.slickPrev()} 
+            onClickRight={()=>sliderRef.current.slickNext()}
+            onClick={handleDiscoverClick}
+          />
+        )}
       </div>
 
       <Slider ref={sliderRef} className="movieSlider__inner" {...settings}>

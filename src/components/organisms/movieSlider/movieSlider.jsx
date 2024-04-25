@@ -25,8 +25,6 @@ function MovieSlider({ title, movies }) {
       slidesToScroll: 3,
       initialSlide: 0, 
       autoplay: true,
-      autoplaySpeed: 5000,
-      speed: 1000,
       responsive: [
           {
               breakpoint: 2000,

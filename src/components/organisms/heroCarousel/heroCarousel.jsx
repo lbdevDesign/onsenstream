@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { useMediaQuery } from 'react-responsive'
 
 //Atoms
 import CtaButton from '../../atoms/buttons/ctabutton/ctabutton';
-import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton";
 
 //Molecules
 import CarouselNav from '../../molecules/carouselnav/carouselnav';
 
-//Data
-import heroCarouselData from '../../../data/heroCarouselItems';
-
-//Assets
-import {HandThumbUpIcon} from '@heroicons/react/24/outline';
-import {PlusIcon} from '@heroicons/react/24/outline';
 
 export const HeroCarousel = ({ trend }) => {
 

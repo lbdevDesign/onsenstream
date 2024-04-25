@@ -3,13 +3,13 @@
     overflow: hidden;
     width: 96vw;
     max-width: 1440px;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 8px;
     @include tabletLandscape {
-        height: 700px;
+        height: 600px;
     }
     &__inner {
         display: flex;
@@ -19,54 +19,77 @@
     &__item {
         position: relative;
         min-width: 100%;
-        height: 500px;
+        height: 600px;
         display: inline-flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 4px;
         @include tabletLandscape {
-            height: 700px;
+            height: 600px;
+            padding: 12px 100px 24px 100px;
+            flex-direction: row;
         }
-        &__img {
-            height: 100% ;
+        @include Desktop {
+            padding: 12px 200px 24px 200px;
+        }
+        &__background {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            z-index: -10;
             object-fit: cover;
+            filter: blur(2px) brightness(25%);
+        }
+        &__cadre {
+            background-color: $darkMedium;
+            box-sizing: border-box;
+            border: solid 1px $darkLight;
+            height: 60%;
             border-radius: 8px;
-            &--overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            @include tabletLandscape {
+                margin-right: 32px;
+            }
+            @include Desktop {
+                height: 80%;
+            }
+            &__img {
                 height: 100%;
-                background: linear-gradient(to bottom, rgba(20, 20, 20, 0), rgba(20, 20, 20, 0.8) 60%, rgba(20, 20, 20, 1)); 
-                pointer-events: none; 
+                width: auto;
+                object-fit: cover;
+                border-radius: 8px;
             }
         }
         &__content {
-            position: absolute;
-            bottom: 60px;
-            width: 90%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 44px;
             @include tabletLandscape {
-                bottom: 80px;
+                align-items: flex-start;
             }
             &--title {
                 color: $white;
                 font-size: $h2mobile;
                 text-transform: uppercase;
-                text-align: center;
                 margin-bottom: 12px;
                 white-space: normal;
+                text-align: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include tabletLandscape {
+                    text-align: left;
+                }
             }
             &--description {
                 display: none;
                 color: $greyLight;
-                text-align: center;
-                width: 80%;
+                width: 100%;
                 white-space: normal;
-
+                text-align: left;
                 @include tabletLandscape {
                     display: block;
                     margin-bottom: 20px;
@@ -75,7 +98,6 @@
             &__cta {
                 display: inline-flex;
                 flex-wrap: wrap;
-                justify-content: center;
                 > button {
                     margin: 4px;
                 }

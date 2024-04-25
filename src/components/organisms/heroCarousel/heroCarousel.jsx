@@ -16,7 +16,7 @@ import heroCarouselData from '../../../data/heroCarouselItems';
 import {HandThumbUpIcon} from '@heroicons/react/24/outline';
 import {PlusIcon} from '@heroicons/react/24/outline';
 
-export const HeroCarousel = ({ movies }) => {
+export const HeroCarousel = ({ trend }) => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
@@ -42,8 +42,8 @@ export const HeroCarousel = ({ movies }) => {
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
-            newIndex = movies.length - 1;
-        } else if (newIndex >= movies.length) {
+            newIndex = trend.length - 1;
+        } else if (newIndex >= trend.length) {
             newIndex = 0;
         }
         setActiveIndex(newIndex);
@@ -69,12 +69,14 @@ export const HeroCarousel = ({ movies }) => {
             <div className="heroCarousel__inner"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
 
-                {movies.map((item) => (
+                {trend.map((item) => (
                     <div key={item.id} className="heroCarousel__item" >
-                        <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} className="heroCarousel__item__img" alt={item.title}/>
-                        <div className="heroCarousel__item__img--overlay"></div>
+                        <img className="heroCarousel__item__background" src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt={`background ${item.title}`} />
+                        <div className="heroCarousel__item__cadre" >
+                            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} className="heroCarousel__item__cadre__img" alt={item.title}/>
+                        </div>
                         <div className="heroCarousel__item__content">
-                            <h2 className="heroCarousel__item__content--title">{item.title}</h2>
+                            <h2 className="heroCarousel__item__content--title">{item.title ? item.title : item.name}</h2>
                             <p className="heroCarousel__item__content--description">{item.overview}</p>
                             <div className="heroCarousel__item__content__cta">
                                 <CtaButton onClick={handleDecouverteClick}>Découvrir</CtaButton>
@@ -89,32 +91,9 @@ export const HeroCarousel = ({ movies }) => {
             </div>
             <CarouselNav 
                 currentIndex={activeIndex} 
-                data={movies} 
+                data={trend} 
                 updateIndex={updateIndex}
             />
-            {/* <div className="heroCarousel__index">
-                {isDesktop && (
-                    <FuncButton onClick={() => { updateIndex(activeIndex - 1) }}>
-                        <ArrowLeftIcon className="icons" alt="Précédent" />
-                    </FuncButton> 
-                )}
-                <div className="heroCarousel__index__indicator">
-                    {heroCarouselData.map((item, index) => {
-                        return (
-                            <IndexButton 
-                                key={item.id} 
-                                onClick={() => { updateIndex(index)}} 
-                                index={index} 
-                                data={activeIndex}/>
-                        )
-                    })}
-                </div>
-                {isDesktop && (
-                    <FuncButton onClick={() => { updateIndex(activeIndex + 1) }}>
-                        <ArrowRightIcon className="icons" alt="Précédent" />
-                    </FuncButton>
-                )}
-            </div> */}
         </div>
     )
 };

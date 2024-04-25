@@ -13,6 +13,8 @@ function App() {
   const [movieGenres, setMovieGenres] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
   const [topMovies, setTopMovies] = useState([]);
+  const [upcomingMovies, setUpcomingMoies] = useState([]);
+  const [trending, setTrending] = useState([]);
 
   const options = {
     method: 'GET',
@@ -23,6 +25,11 @@ function App() {
   }
 
   useEffect(() => {
+    fetch('https://api.themoviedb.org/3/trending/all/week?language=fr-FR', options)
+    .then(response => response.json())
+    .then(response => setTrending(response.results))
+    .catch(err => console.error(err));
+
     fetch('https://api.themoviedb.org/3/genre/movie/list', options)
     .then(response => response.json())
     .then(response => setMovieGenres(response.genres))
@@ -38,10 +45,20 @@ function App() {
     .then(response => setTopMovies(response.results))
     .catch(err => console.error(err));
 
+    fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1', options)
+    .then(response => response.json())
+    .then(response => setUpcomingMoies(response.results))
+    .catch(err => console.error(err));
+
+    
+    fetch('https://api.themoviedb.org/3/watch/providers/movie?language=fr-FR&watch_region=fr', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
   }, [])
 
-  popularMovies.sort((a, b) => b.popularity - a.popularity);
-  const top5PopularMovies = popularMovies.slice(0, 5);
+  trending.sort((a, b) => b.popularity - a.popularity);
+  const top5Trendings = trending.slice(0, 5);
 
   return (
     <div className="App">
@@ -49,15 +66,16 @@ function App() {
         <Header />
       </div>
       <div className="App__hero">
-        <HeroCarousel movies={top5PopularMovies}/>
+        <HeroCarousel trend={top5Trendings}/>
       </div>
-      <div className="App__switch">
+      {/* <div className="App__switch">
         <SwitchButton />
-      </div>
+      </div> */}
       <div className="App__movies">
-        <GenreSlider title="Films par genres" movieGenres={movieGenres}/>
-        <MovieSlider title='Films populaires' movies={popularMovies || []} />
-        <MovieSlider title='Films les mieux notés' movies={topMovies || []}/>
+        <GenreSlider title="Par genres" movieGenres={movieGenres}/>
+        <MovieSlider title='En ce moment' movies={upcomingMovies || []}/>
+        <MovieSlider title='Populaires' movies={popularMovies || []} />
+        <MovieSlider title='Les mieux notés' movies={topMovies || []}/>
       </div>
     </div>
   );

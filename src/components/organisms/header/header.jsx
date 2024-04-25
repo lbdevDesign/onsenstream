@@ -7,7 +7,7 @@ import FuncButton from '../../atoms/buttons/functionalbutton/funcbutton';
 import { Searchbar } from '../../molecules/searchbar/searchbar';
 
 //Assets
-import osesLogo from '../../../assets/osesLogo.svg';
+import osesLogo from '../../../assets/OSSLogo.svg';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import {XMarkIcon} from '@heroicons/react/24/outline';
 import {UserIcon} from '@heroicons/react/24/outline';

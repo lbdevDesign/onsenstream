@@ -126,27 +126,19 @@ function GenreSlider({ title, movieGenres }) {
           {
             breakpoint: 840,
             settings: {
-              slidesToShow: 3,
               slidesToScroll: 1,
+              slidesToShow: 3,
               swipeToSlide: true
             }
           },
           {
             breakpoint: 620,
             settings: {
-              slidesToShow: 2,
               slidesToScroll: 1,
+              slidesToShow: 2,
               swipeToSlide: true
             }
           },
-          {
-              breakpoint: 420,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                swipeToSlide: true
-              }
-          }
         ]
   };   
   
@@ -167,11 +159,14 @@ function GenreSlider({ title, movieGenres }) {
             )}
         </div>
 
-        <Slider ref={sliderRef} className="genreSlider__inner" {...settings}>
-          {genreList.map((item) => (
-            <GenreCard key={item.id} genre={item.name} />
-          ))}
-        </Slider>
+        <div className="genreSlider__box">
+          <div className="genreSlider__box__fade"></div>
+          <Slider ref={sliderRef} className="genreSlider__box__inner" {...settings}>
+            {genreList.map((item) => (
+              <GenreCard key={item.id} genre={item.name} />
+            ))}
+          </Slider>
+        </div>
         
     </div>
   )

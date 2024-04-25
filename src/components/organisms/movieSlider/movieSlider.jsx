@@ -23,12 +23,14 @@ function MovieSlider({ title, movies }) {
       infinite: true,
       slidesToShow: 5,
       slidesToScroll: 3,
+      initialSlide: 0, 
       responsive: [
           {
               breakpoint: 2000,
               settings: {
-                slidesToShow: 7.5,
+                slidesToShow: 7,
                 slidesToScroll: 2,
+                initialSlide: 0, 
                 infinite: true,
                 dots: true
               }
@@ -36,8 +38,9 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 1460,
               settings: {
-                slidesToShow: 6.5,
+                slidesToShow: 6,
                 slidesToScroll: 2,
+                initialSlide: 0, 
                 infinite: true,
                 dots: true
               }
@@ -45,8 +48,9 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 1240,
               settings: {
-                slidesToShow: 5.5,
+                slidesToShow: 5,
                 slidesToScroll: 2,
+                initialSlide: 0, 
                 infinite: true,
                 dots: true
               }
@@ -54,8 +58,9 @@ function MovieSlider({ title, movies }) {
           {
             breakpoint: 1020,
             settings: {
-              slidesToShow: 4.5,
+              slidesToShow: 4,
               slidesToScroll: 2,
+              initialSlide: 0, 
               infinite: true,
               dots: true
             }
@@ -63,25 +68,22 @@ function MovieSlider({ title, movies }) {
           {
             breakpoint: 840,
             settings: {
-              slidesToShow: 3.5,
+              slidesToShow: 3,
               slidesToScroll: 1,
+              initialSlide: 0, 
+              infinite: true,
               swipeToSlide: true
             }
           },
           {
             breakpoint: 620,
             settings: {
-              slidesToShow: 2.5,
+              slidesToShow: 2,
               slidesToScroll: 1,
+              initialSlide: 0, 
+              infinite: true,
               swipeToSlide: true
             }
-          },
-          {
-              breakpoint: 420,
-              settings: {
-                slidesToShow: 1.5,
-                slidesToScroll: 1
-              }
           }
         ]
   };   
@@ -103,11 +105,15 @@ function MovieSlider({ title, movies }) {
         )}
       </div>
 
-      <Slider ref={sliderRef} className="movieSlider__inner" {...settings}>
-        {movies.map((item) => (
-          <MovieCard key={item.id} {...item}/>
-        ))}
-      </Slider>
+      <div className="movieSlider__box">
+        <div className="movieSlider__box__fade"></div>
+        <Slider ref={sliderRef} className="movieSlider__box__inner" {...settings}>
+          {movies.map((item) => (
+            <MovieCard key={item.id} {...item}/>
+          ))}
+        </Slider>
+
+      </div>
         
     </div>
   )

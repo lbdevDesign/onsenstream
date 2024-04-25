@@ -12,15 +12,13 @@ function MovieCard({ ...item }) {
         if (item.release_date >= formattedToday) setIsUpcoming(true);
     }, [])
     
-    console.log(item);
-
     return(
         <a className="moviecard">
             <div className="moviecard__imgbox">
                 <img src={coverPath} className="moviecard__imgbox__img" alt={item.title}/>
                 { isUpcoming && (<p className="moviecard__imgbox__soon">bientôt</p> )}
             </div>
-            {/* <p className="moviecard__title">{item.title}</p> */}
+            <p className="moviecard__title">{item.title}</p>
         </a>
     )
 }

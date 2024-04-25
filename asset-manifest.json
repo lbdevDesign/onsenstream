@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/onsenstreamfront/static/css/main.27975e6d.css",
-    "main.js": "/onsenstreamfront/static/js/main.eda371d6.js",
+    "main.js": "/onsenstreamfront/static/js/main.46f46ed6.js",
     "static/media/OSSLogo.svg": "/onsenstreamfront/static/media/OSSLogo.b88b0445a79a493dfe0f4f1a8b2d6a9c.svg",
     "static/media/slick.svg": "/onsenstreamfront/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/onsenstreamfront/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,10 +9,10 @@
     "static/media/slick.woff": "/onsenstreamfront/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/onsenstreamfront/index.html",
     "main.27975e6d.css.map": "/onsenstreamfront/static/css/main.27975e6d.css.map",
-    "main.eda371d6.js.map": "/onsenstreamfront/static/js/main.eda371d6.js.map"
+    "main.46f46ed6.js.map": "/onsenstreamfront/static/js/main.46f46ed6.js.map"
   },
   "entrypoints": [
     "static/css/main.27975e6d.css",
-    "static/js/main.eda371d6.js"
+    "static/js/main.46f46ed6.js"
   ]
 }

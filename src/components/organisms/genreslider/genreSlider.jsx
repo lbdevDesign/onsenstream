@@ -14,6 +14,69 @@ function GenreSlider({ title, movieGenres }) {
     query: '(min-width: 900px)'
   })
 
+  const genreList = [
+    {
+      id: 28,
+      name: "Action",
+    },
+    {
+      id: 12,
+      name: "Aventure",
+    },
+    {
+      id: 16,
+      name: "Animation",
+    },
+    {
+      id: 35,
+      name: "Comédie",
+    },
+    {
+      id: 80,
+      name: "Crime",
+    },
+    {
+      id: 99,
+      name: "Documentaire",
+    },
+    {
+      id: 18,
+      name: "Drame",
+    },
+    {
+      id: 14,
+      name: "Fantaisie",
+    },
+    {
+      id: 36,
+      name: "Historique",
+    },
+    {
+      id: 27,
+      name: "Horreur",
+    },
+    {
+      id: 10749,
+      name: "Romantique",
+    },
+    {
+      id: 878,
+      name: "Science Fiction",
+    },
+    {
+      id: 53,
+      name: "Thriller",
+    },
+    {
+      id: 10752,
+      name: "Guerre",
+    },
+    {
+      id: 37,
+      name: "Western",
+    },
+  ]
+
   const sliderRef = useRef(null);
 
   const settings = {
@@ -105,20 +168,9 @@ function GenreSlider({ title, movieGenres }) {
         </div>
 
         <Slider ref={sliderRef} className="genreSlider__inner" {...settings}>
-          {movieGenres && movieGenres.map((item) => (
+          {genreList.map((item) => (
             <GenreCard key={item.id} genre={item.name} />
           ))}
-    
-            {/* <GenreCard genre="horror" />
-            <GenreCard genre="action" />
-            <GenreCard genre="comic" />
-            <GenreCard genre="love" />
-            <GenreCard genre="aventure" />
-            <GenreCard genre="horror" />
-            <GenreCard genre="action" />
-            <GenreCard genre="comic" />
-            <GenreCard genre="love" />
-            <GenreCard genre="aventure" /> */}
         </Slider>
         
     </div>

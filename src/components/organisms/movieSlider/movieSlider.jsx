@@ -27,7 +27,7 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 2000,
               settings: {
-                slidesToShow: 7,
+                slidesToShow: 7.5,
                 slidesToScroll: 2,
                 infinite: true,
                 dots: true
@@ -36,7 +36,7 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 1460,
               settings: {
-                slidesToShow: 6,
+                slidesToShow: 6.5,
                 slidesToScroll: 2,
                 infinite: true,
                 dots: true
@@ -45,7 +45,7 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 1240,
               settings: {
-                slidesToShow: 5,
+                slidesToShow: 5.5,
                 slidesToScroll: 2,
                 infinite: true,
                 dots: true
@@ -54,7 +54,7 @@ function MovieSlider({ title, movies }) {
           {
             breakpoint: 1020,
             settings: {
-              slidesToShow: 4,
+              slidesToShow: 4.5,
               slidesToScroll: 2,
               infinite: true,
               dots: true
@@ -63,7 +63,7 @@ function MovieSlider({ title, movies }) {
           {
             breakpoint: 840,
             settings: {
-              slidesToShow: 3,
+              slidesToShow: 3.5,
               slidesToScroll: 1,
               swipeToSlide: true
             }
@@ -71,7 +71,7 @@ function MovieSlider({ title, movies }) {
           {
             breakpoint: 620,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 2.5,
               slidesToScroll: 1,
               swipeToSlide: true
             }
@@ -79,9 +79,8 @@ function MovieSlider({ title, movies }) {
           {
               breakpoint: 420,
               settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                swipeToSlide: true
+                slidesToShow: 1.5,
+                slidesToScroll: 1
               }
           }
         ]

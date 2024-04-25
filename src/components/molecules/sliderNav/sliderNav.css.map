@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,OAAO,EAAE,GAAG;EACZ,GAAG,EAAE,GAAG;CACX",
+    "sources": [
+        "sliderNav.scss"
+    ],
+    "names": [],
+    "file": "sliderNav.css"
+}

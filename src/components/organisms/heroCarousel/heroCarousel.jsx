@@ -44,14 +44,6 @@ export const HeroCarousel = ({ trend }) => {
     function handleDecouverteClick() {
         console.log("vers la page du film");
     };
-     
-    function handleLikeClick() {
-        console.log("Like ajouté");
-    };
-
-    function handleAddClick() {
-        console.log("Film ajouté à la watchlist");
-    };
 
     return (
         <div {...handlers}

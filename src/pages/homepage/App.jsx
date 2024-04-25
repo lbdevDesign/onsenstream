@@ -6,8 +6,6 @@ import { HeroCarousel } from "../../components/organisms/heroCarousel/heroCarous
 import GenreSlider from "../../components/organisms/genreslider/genreSlider";
 import MovieSlider from "../../components/organisms/movieSlider/movieSlider";
 
-//Atoms
-import SwitchButton from "../../components/atoms/buttons/switchbutton/switchbutton";
 
 function App() {
   const [movieGenres, setMovieGenres] = useState([]);

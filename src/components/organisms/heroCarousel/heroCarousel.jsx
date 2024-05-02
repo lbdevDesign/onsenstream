@@ -46,8 +46,6 @@ export const HeroCarousel = ({ trend }) => {
         console.log("vers la page du film");
     };
 
-    console.log(trend);
-
     return (
         <div {...handlers}
         className="heroCarousel"

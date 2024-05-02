@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 function useAllTrendingsData() {
   const [allTrendings, setAllTrendings] = useState([]);
 
   useEffect(() => {
-
     const options = {
         method: 'GET',
         headers: {

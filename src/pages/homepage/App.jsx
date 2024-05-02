@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+//Data
+// import useAllTrendingsData from "../../data/allTrendings"
+
 //Organisms
 import Header from "../../components/organisms/header/header";
 import { HeroCarousel } from "../../components/organisms/heroCarousel/heroCarousel";
@@ -12,6 +15,9 @@ function App() {
   const [topMovies, setTopMovies] = useState([]);
   const [upcomingMovies, setUpcomingMoies] = useState([]);
   const [trending, setTrending] = useState([]);
+
+  // const trendingsData = useAllTrendingsData();
+  // console.log(trendingsData);
 
   const options = {
     method: 'GET',
@@ -40,12 +46,6 @@ function App() {
     fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1', options)
     .then(response => response.json())
     .then(response => setUpcomingMoies(response.results))
-    .catch(err => console.error(err));
-
-    
-    fetch('https://api.themoviedb.org/3/watch/providers/movie?language=fr-FR&watch_region=fr', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
     .catch(err => console.error(err));
   }, [])
 

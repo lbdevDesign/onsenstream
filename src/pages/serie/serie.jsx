@@ -27,7 +27,6 @@ function Serie() {
     }, [id])    
 
     const backdropPath = `https://image.tmdb.org/t/p/w500${serie.backdrop_path}`;
-    console.log(serie);    
 
     return(
         <>

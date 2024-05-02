@@ -110,8 +110,8 @@ function MovieSlider({ title, movies }) {
         <div className="movieSlider__box__fade"></div>
         <Slider ref={sliderRef} className="movieSlider__box__inner" {...settings}>
           {movies.map((item) => (
-            <Link to={`/movie/${item.id}`}>
-              <MovieCard key={item.id} {...item}/>
+            <Link to={`/movie/${item.id}`} key={item.id}>
+              <MovieCard {...item}/>
             </Link>
           ))}
         </Slider>

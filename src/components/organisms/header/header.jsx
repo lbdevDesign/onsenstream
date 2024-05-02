@@ -11,6 +11,7 @@ import osesLogo from '../../../assets/OSSLogo.svg';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import {XMarkIcon} from '@heroicons/react/24/outline';
 import {UserIcon} from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -26,7 +27,9 @@ function Header() {
 
     return(
         <div className="header">
-            <img src={osesLogo} className='header__logo' alt="Logo On s'en stream" />
+            <Link to={"/"}>
+                <img src={osesLogo} className='header__logo' alt="Logo On s'en stream" />
+            </Link>
             <div className='header__cta'>
                 {showSearchbar ? (
                     <button className='header__cta__close' onClick={display}>

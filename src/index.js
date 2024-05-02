@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import './style/index.scss';
 import App from './pages/homepage/App';
-import Movie from './pages/movies/movies';
+import Movie from './pages/movie/movie';
+import Serie from './pages/serie/serie';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/movie/:id",
     element: <Movie />
+  },
+  {
+    path: "/serie/:id",
+    element: <Serie />
   }
 ]);
 

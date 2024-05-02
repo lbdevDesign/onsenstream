@@ -1,0 +1,14 @@
+.cardtag {
+    display: flex;
+    background-color: $dark;
+    border: solid 1px $darkLight;
+    border-radius: 4px;
+    padding: 8px 12px;
+    align-self: center;
+    &__text {
+        font-size: 12px;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}

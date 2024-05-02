@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 
 //Atoms
@@ -45,6 +46,8 @@ export const HeroCarousel = ({ trend }) => {
         console.log("vers la page du film");
     };
 
+    console.log(trend);
+
     return (
         <div {...handlers}
         className="heroCarousel"
@@ -63,7 +66,9 @@ export const HeroCarousel = ({ trend }) => {
                             <h2 className="heroCarousel__item__content--title">{item.title ? item.title : item.name}</h2>
                             <p className="heroCarousel__item__content--description">{item.overview}</p>
                             <div className="heroCarousel__item__content__cta">
-                                <CtaButton onClick={handleDecouverteClick}>Découvrir</CtaButton>
+                                <Link to={item.media_type === "movie" ? `/movie/${item.id}` : `/serie/${item.id}`}>
+                                    <CtaButton onClick={handleDecouverteClick}>Découvrir</CtaButton>
+                                </Link>
                                 {/* <FuncButton onClick={handleAddClick}>
                                     <PlusIcon className="icons" alt="Ajouter" />
                                 </FuncButton> */}

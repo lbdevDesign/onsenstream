@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 //Data
-// import useAllTrendingsData from "../../data/allTrendings"
+import useAllTrendingsData from "../../data/allTrendings"
+import useMovieTrendingsData from "../../data/movieTrendings";
 
 //Organisms
 import Header from "../../components/organisms/header/header";
@@ -11,13 +12,12 @@ import MovieSlider from "../../components/organisms/movieSlider/movieSlider";
 
 
 function App() {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [trending, setTrending] = useState([]);
+  const trendingsData = useAllTrendingsData();
+  const [trendingMovies, setTrendingMovies] = useState([]);
+  const trendingMoviesData = useMovieTrendingsData();
   const [topMovies, setTopMovies] = useState([]);
   const [upcomingMovies, setUpcomingMoies] = useState([]);
-  const [trending, setTrending] = useState([]);
-
-  // const trendingsData = useAllTrendingsData();
-  // console.log(trendingsData);
 
   const options = {
     method: 'GET',
@@ -28,15 +28,8 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/trending/all/week?language=fr-FR', options)
-    .then(response => response.json())
-    .then(response => setTrending(response.results))
-    .catch(err => console.error(err));
-
-    fetch('https://api.themoviedb.org/3/trending/movie/week?language=fr-FR', options)
-    .then(response => response.json())
-    .then(response => setPopularMovies(response.results))
-    .catch(err => console.error(err));
+    setTrending(trendingsData);
+    setTrendingMovies(trendingMoviesData);
 
     fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1', options)
     .then(response => response.json())
@@ -47,7 +40,7 @@ function App() {
     .then(response => response.json())
     .then(response => setUpcomingMoies(response.results))
     .catch(err => console.error(err));
-  }, [])
+  }, [trendingsData, trendingMoviesData])
 
   trending.sort((a, b) => b.popularity - a.popularity);
   const top5Trendings = trending.slice(0, 5);
@@ -66,7 +59,7 @@ function App() {
       <div className="App__movies">
         <GenreSlider title="Par genres" />
         <MovieSlider title='En ce moment' movies={upcomingMovies || []}/>
-        <MovieSlider title='Populaires' movies={popularMovies || []} />
+        <MovieSlider title='Populaires' movies={trendingMovies || []} />
         <MovieSlider title='Les mieux notés' movies={topMovies || []}/>
       </div>
     </div>

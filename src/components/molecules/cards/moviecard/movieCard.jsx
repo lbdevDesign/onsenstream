@@ -10,7 +10,7 @@ function MovieCard({ ...item }) {
     
     useEffect(() => {
         if (item.release_date >= formattedToday) setIsUpcoming(true);
-    }, [])
+    }, [formattedToday])
     
     return(
         <a className="moviecard">

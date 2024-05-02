@@ -1,5 +1,5 @@
 .header {
-    z-index: 2;
+    z-index: 100;
     width: 100vw;
     padding: 8px 24px;
     display: flex;
@@ -10,14 +10,14 @@
         padding: 16px 32px 16px 24px;
     }
     &__logo {
-        z-index: 2;
+        z-index: 90;
         height: 32px;
         @include Desktop {
             height: 38px;
         }
     }
     &__cta {
-        z-index: 2;
+        z-index: 90;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -43,7 +43,7 @@
             }
         }
         &__close {
-            z-index: 2;
+            z-index: 90;
             background-color: $dark;
             border: none;
             height: 44px;

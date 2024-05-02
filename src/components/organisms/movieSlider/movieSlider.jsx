@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 //Molecules
 import SliderNav from "../../molecules/sliderNav/sliderNav";
 import MovieCard from "../../molecules/cards/moviecard/movieCard";
+import { Link } from "react-router-dom";
 
 function MovieSlider({ title, movies }) {
 
@@ -109,7 +110,9 @@ function MovieSlider({ title, movies }) {
         <div className="movieSlider__box__fade"></div>
         <Slider ref={sliderRef} className="movieSlider__box__inner" {...settings}>
           {movies.map((item) => (
-            <MovieCard key={item.id} {...item}/>
+            <Link to={`/movie/${item.id}`}>
+              <MovieCard key={item.id} {...item}/>
+            </Link>
           ))}
         </Slider>
 

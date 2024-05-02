@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import SliderNav from "../../molecules/sliderNav/sliderNav";
 import GenreCard from "../../molecules/cards/genrecard/genreCard";
 
-function GenreSlider({ title, movieGenres }) {
+function GenreSlider({ title }) {
 
   const isDesktop = useMediaQuery({
     query: '(min-width: 900px)'

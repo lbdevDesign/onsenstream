@@ -1,0 +1,40 @@
+.castcard {
+    background-color: $darkMedium;
+    border: solid 1px $darkLight;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    &__imgbox {
+        position: relative;
+        width: 150px;
+        &__img {
+            width: 100%;
+            aspect-ratio: 2/3;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+    }
+    &__character {
+        text-align: center;
+        color: $primaryLight;
+        font-family: $manrope;
+        font-weight: $semiBold;
+        font-size: 16px;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__name {
+        text-align: center;
+        color: $white;
+        font-family: $manrope;
+        font-size: 16px;
+        font-weight: 300;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

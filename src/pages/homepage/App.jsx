@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 //Data
 import useAllTrendingsData from "../../data/allTrendings"
 import useMovieTrendingsData from "../../data/movieTrendings";
+import useMovieTopData from "../../data/movieTop";
+import useMovieUpcomingData from "../../data/movieUpcoming";
 
 //Organisms
 import Header from "../../components/organisms/header/header";
@@ -14,33 +16,19 @@ import MovieSlider from "../../components/organisms/movieSlider/movieSlider";
 function App() {
   const [trending, setTrending] = useState([]);
   const trendingsData = useAllTrendingsData();
+  const [upcomingMovies, setUpcomingMoies] = useState([]);
+  const upcomingMovieData = useMovieUpcomingData();
   const [trendingMovies, setTrendingMovies] = useState([]);
   const trendingMoviesData = useMovieTrendingsData();
   const [topMovies, setTopMovies] = useState([]);
-  const [upcomingMovies, setUpcomingMoies] = useState([]);
-
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization:  process.env.REACT_APP_API_KEY
-    }
-  }
+  const topMovieData = useMovieTopData();
 
   useEffect(() => {
     setTrending(trendingsData);
+    setUpcomingMoies(upcomingMovieData);
     setTrendingMovies(trendingMoviesData);
-
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1', options)
-    .then(response => response.json())
-    .then(response => setTopMovies(response.results))
-    .catch(err => console.error(err));
-
-    fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1', options)
-    .then(response => response.json())
-    .then(response => setUpcomingMoies(response.results))
-    .catch(err => console.error(err));
-  }, [trendingsData, trendingMoviesData])
+    setTopMovies(topMovieData);
+  }, [trendingsData, upcomingMovieData, trendingMoviesData, topMovieData])
 
   trending.sort((a, b) => b.popularity - a.popularity);
   const top5Trendings = trending.slice(0, 5);
@@ -57,7 +45,7 @@ function App() {
         <SwitchButton />
       </div> */}
       <div className="App__movies">
-        <GenreSlider title="Par genres" />
+        <GenreSlider title="Top par genres" />
         <MovieSlider title='En ce moment' movies={upcomingMovies || []}/>
         <MovieSlider title='Populaires' movies={trendingMovies || []} />
         <MovieSlider title='Les mieux notés' movies={topMovies || []}/>

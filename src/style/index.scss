@@ -13,6 +13,7 @@
 @import "../components/organisms/heroCarousel/heroCarousel.scss";
 @import "../components/organisms/movieSlider/movieSlider.scss";
 @import "../components/organisms/genreslider/genreSlider.scss";
+@import "../components/organisms/castSlider/castSlider.scss";
 
 //Molecules
 @import "../components/molecules/searchbar/searchbar.scss";
@@ -20,6 +21,7 @@
 @import "../components/molecules/sliderNav/sliderNav.scss";
 @import "../components/molecules/cards/moviecard/movieCard.scss";
 @import "../components/molecules/cards/genrecard/genreCard.scss";
+@import "../components/molecules/cards/castCard/castCard.scss";
 
 //Atoms
 @import "../components/atoms/buttons/ctabutton/ctabutton.scss";
@@ -27,6 +29,7 @@
 @import "../components/atoms/buttons/indexbutton/indexbutton.scss";
 @import "../components/atoms/tags/genretags/genreTag.scss";
 @import "../components/atoms/buttons/switchbutton/switchbutton.scss";
+@import "../components/atoms/tags/providertags/providerTag.scss";
 
 
 

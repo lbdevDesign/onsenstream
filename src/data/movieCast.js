@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-function useMovieTrendingsData() {
-  const [movieTrendings, setMovieTrendings] = useState([]);
+function useMovieCast(param) {
+  const [movieCast, setMovieCast] = useState([]);
 
   useEffect(() => {
     const options = {
@@ -13,14 +13,14 @@ function useMovieTrendingsData() {
       }
 
       const fetchData = async () => {
-        const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?language=fr-FR', options);
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${param}/credits?language=fr-FR`, options);
         const data = await response.json();
-        setMovieTrendings(data.results);
+        setMovieCast(data.cast.filter(cast => cast.profile_path).slice(0, 20));
       } 
       fetchData();
   }, []);
 
-  return movieTrendings;
+  return movieCast;
 }
 
-export default useMovieTrendingsData;
+export default useMovieCast;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-function useMovieTrendingsData() {
-  const [movieTrendings, setMovieTrendings] = useState([]);
+function useMovieTopData() {
+  const [movieTop, setMovieTop] = useState([]);
 
   useEffect(() => {
     const options = {
@@ -13,14 +13,14 @@ function useMovieTrendingsData() {
       }
 
       const fetchData = async () => {
-        const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?language=fr-FR', options);
+        const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1', options);
         const data = await response.json();
-        setMovieTrendings(data.results);
+        setMovieTop(data.results);
       } 
       fetchData();
   }, []);
 
-  return movieTrendings;
+  return movieTop;
 }
 
-export default useMovieTrendingsData;
+export default useMovieTopData;

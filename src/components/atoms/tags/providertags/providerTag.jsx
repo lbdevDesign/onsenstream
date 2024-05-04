@@ -2,15 +2,13 @@ import React from "react";
 
 function ProviderTag({ provider }) {
 
-    console.log(provider);
-
     const providerPath = `https://image.tmdb.org/t/p/w500${provider.logo_path}`; 
     let backgroundStyle;
     if (provider.provider_name === "Netflix") {
         backgroundStyle = {
             backgroundImage: "linear-gradient(130deg, rgba(224,3,9,1) 0%, rgba(165,2,6,1) 100%)",
         };
-    } if (provider.provider_name === "Canal+") {
+    } if (provider.provider_name === "Canal+" || "Apple Tv Plus" || "Apple Tv") {
         backgroundStyle = {
             backgroundImage: "linear-gradient(130deg, rgba(60,60,60,1) 0%, rgba(35,35,35,1) 100%)",
         };
@@ -26,8 +24,11 @@ function ProviderTag({ provider }) {
         backgroundStyle = {
             backgroundImage: "linear-gradient(130deg, rgba(32,189,235,1) 0%, rgba(0,39,100,1) 100%)",
         };
+    } if (provider.provider_name === "TF1") {
+        backgroundStyle = {
+            backgroundImage: "linear-gradient(130deg, rgba(56,85,190,1) 0%, rgba(136,6,55,1) 100%)",
+        };
     }
-
 
     return (
         <div className="Provider" style={backgroundStyle}>

@@ -9,9 +9,9 @@ function MediaSlider({ title, medias, type, cta }) {
 
   let mediaPath;
   if (type === "movies") {
-    mediaPath = "/movie/"
+    mediaPath = "/onsenstream/movie/"
   } else if (type === "series") {
-    mediaPath = "/serie/"
+    mediaPath = "/onsenstream/serie/"
   }
 
   return (

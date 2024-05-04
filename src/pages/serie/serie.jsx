@@ -1,30 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+//Data
+import useSerieData from "../../data/serie";
+import useSerieProvider from "../../data/serieProvider";
+import useSerieCast from "../../data/serieCast";
+import useSerieRecommendationsData from "../../data/serieRecommendations";
+
 //Organism
 import Header from "../../components/organisms/header/header";
+import CastSlider from "../../components/organisms/castSlider/castSlider";
+import MediaSlider from "../../components/organisms/mediaSlider/mediaSlider";
 
 //atoms
 import GenreTag from "../../components/atoms/tags/genretags/genreTag";
+import ProviderTag from "../../components/atoms/tags/providertags/providerTag";
 
 function Serie() {
     const { id } = useParams();
     const [serie, setSerie] = useState([]);
+    const serieData = useSerieData(id);
+    const [serieProvider, setSerieProvider] = useState([]);
+    const serieProviderData = useSerieProvider(id);
+    const [serieCast, setSerieCast] = useState([]);
+    const serieCastData = useSerieCast(id);
+    const [serieReco, setSerieReco] = useState([]);
+    const serieRecoData = useSerieRecommendationsData(id);
+
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            headers: {
-              accept: 'application/json',
-              Authorization: process.env.REACT_APP_API_KEY
-            }
-        }
-
-        fetch(`https://api.themoviedb.org/3/tv/${id}?language=fr-FR`, options)
-        .then(response => response.json())
-        .then(response => setSerie(response))
-        .catch(err => console.error(err));
-    }, [id])    
+        window.scrollTo(0, 0);
+        setSerie(serieData);
+        setSerieProvider(serieProviderData);
+        setSerieCast(serieCastData);
+        setSerieReco(serieRecoData);
+    }, [serieData, serieProviderData, serieCastData, serieRecoData])    
 
     const backdropPath = `https://image.tmdb.org/t/p/w500${serie.backdrop_path}`;
 
@@ -41,6 +51,11 @@ function Serie() {
                         <img src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} className="Serie__infos__poster--img" alt={`${serie.title} poster`}/>
                     </div>
                     <div className="Serie__infos__details">
+                        {serieProvider?.flatrate? (
+                            <ProviderTag provider={serieProvider.flatrate[0]} />
+                        ) : (
+                            <></>
+                        )}
                         <h1 className="Serie__infos__details__title">{serie.name}</h1>
                         <div className="Serie__infos__details__genres">
                             {serie.genres && serie.genres.map((item) => (
@@ -49,7 +64,7 @@ function Serie() {
                         </div>
                         <div className="Serie__infos__details__infos">
                             <div className="Serie__infos__details__infos__field">
-                                <p className="Serie__infos__details__infos--label">Année :</p>
+                                <p className="Serie__infos__details__infos--label">Dernière saison :</p>
                                 <p className="Serie__infos__details__infos__param">{serie.last_air_date ? serie.last_air_date.slice(0, 4) : ""}</p>
                             </div>
                             <div className="Serie__infos__details__infos__field">
@@ -69,8 +84,11 @@ function Serie() {
 
                     </div>
                 </div>
-                <div className="Serie__trailer">
-                    <h2>Bande d'annonce</h2>
+                <div className="Serie__cast">
+                    <CastSlider title="Casting" casting={serieCast}/>
+                </div>
+                <div className="Serie__reco">
+                    <MediaSlider title="Recommandés" medias={serieReco || []} type="series"/>
                 </div>
             </div>
         </>

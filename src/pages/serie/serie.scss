@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
     margin-bottom: 300px;
     &__backdrop {
         z-index: -10;
@@ -31,7 +32,7 @@
         }
     }
     &__infos {
-        margin-top: 144px;
+        margin-top: 100px;
         display: flex;
         gap: 12px;
         width: 90%;
@@ -103,7 +104,16 @@
             }
         }
     }
-    &__trailer {
+    &__cast {
+        background-color: $darkMedium;
+        box-sizing: border-box;
+        border: solid 1px $darkLight;
+        width: 90%;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 12px;
+    }
+    &__reco {
         background-color: $darkMedium;
         box-sizing: border-box;
         border: solid 1px $darkLight;

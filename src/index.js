@@ -13,6 +13,7 @@ import People from './pages/people/people';
 const router = createBrowserRouter([
   {
     path: "/",
+    exact: true,
     element: <App />,
   },
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
     element: <People />
   },
   {
-    path: "/*",
+    path: "*",
     element: <h1>404</h1>
   }
 ]);

@@ -1,71 +1,134 @@
 .People {
     position: relative;
+    width: 90%;
     max-width: 1440px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     margin: auto;
     margin-bottom: 300px;
+    @include tabletLandscape {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    @include Desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
     &__infos {
-        grid-area: 1 / 1 / 4 / 2; 
-        margin-top: 100px;
+        margin-top: 44px;
         display: flex;
         flex-direction: column;
         gap: 12px;
-        width: 90%;
+        width: 100%;
+        @include tabletLandscape {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        @include Desktop {
+            grid-area: 1 / 1 / 4 / 2;
+        }
         &__profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: fit-content;
+            width: 100%;
+            gap: 12px;
             background-color: $darkMedium;
             box-sizing: border-box;
             border: solid 1px $darkLight;
             border-radius: 8px;
             padding: 12px;
-            margin-bottom: 12px;
+            @include smartphoneBig {
+                flex-direction: row;
+                gap: 24px;
+            }
+            @include tabletLandscape {
+                flex-direction: column;
+            }
             &--img {
-                width: 100%;
+                width: 150px;
                 object-fit: cover;
                 border-radius: 8px;
-            }
-            &__title {
-                margin-bottom: 8px;
-                color: $primaryLight;
-                text-align: center;
-            }
-            &__infos {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 24px;
-                margin-bottom: 24px;
-                &--label {
-                    color: $grey;
-                    font-weight: $medium;
-                    text-align: center;
+                @include smartphoneBig {
+                    height: 220px;
                 }
-                &__field {
+                @include tabletLandscape {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            &__text {
+                &__title {
+                    margin-bottom: 12px;
+                    color: $primaryLight;
+                    text-align: center;
+                    font-size: $h1mobile;
+                    @include smartphoneBig {
+                        text-align: left;
+                    }
+                    @include tabletLandscape {
+                        text-align: center;
+                        font-size: $h1desktop;
+                    }
+                }
+                &__infos {
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
-                    gap: 8px;
-                }
-                &__param {
-                    font-size: 16px;
-                    font-weight: $medium;
-                    line-height: 20px;
-                    text-align: center;
-                    &--small {
-                        font-size: 12px;
+                    align-items: center;
+                    gap: 12px;
+                    margin-bottom: 24px;
+                    @include smartphoneBig {
+                        align-items: flex-start;
+                    }
+                    @include tabletLandscape {
+                        align-items: center;
+                    }
+                    &--label {
+                        color: $grey;
+                        font-weight: $medium;
+                    }
+                    &__field {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8px;
+                        @include smartphoneBig {
+                            align-items: flex-start;
+                        }
+                        @include tabletLandscape {
+                            align-items: center;
+                        }
+                    }
+                    &__param {
+                        font-size: 16px;
+                        font-weight: $medium;
+                        line-height: 20px;
+                        text-align: center;
+                        @include smartphoneBig {
+                            text-align: left;
+                        }
+                        @include tabletLandscape {
+                            text-align: center;
+                        }
+                        &--small {
+                            font-size: 12px;
+                        }
                     }
                 }
             }
         }
         &__filmo {
-            grid-area: 1 / 2 / 2 / 6;
-            margin-top: 100px;
+            grid-area: 1 / 2 / 2 / 5;
+            margin-top: 44px;
             box-sizing: border-box;
             padding: 12px 24px;
             width: 100%;
+            @include tabletLandscape {
+                grid-area: 1 / 2 / 2 / 5;
+            }
+            @include Desktop {
+                grid-area: 1 / 2 / 2 / 6;
+            }
         }
     }
 }    

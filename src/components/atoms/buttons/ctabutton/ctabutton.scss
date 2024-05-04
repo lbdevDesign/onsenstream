@@ -5,8 +5,10 @@
     color: $white;
     font-size: 16px;
     cursor: pointer;
+    transition-duration: 200ms;
     &:hover {
-        filter: brightness(110%);
+        background-color: $white;
+        color: $primary;
     }
     &:active {
         transform: translateY(2px);

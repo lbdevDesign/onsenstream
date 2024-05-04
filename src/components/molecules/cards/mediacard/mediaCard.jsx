@@ -9,8 +9,12 @@ function MediaCard({ ...item }) {
     const formattedToday = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
     
     useEffect(() => {
-        if (item.release_date >= formattedToday) setIsUpcoming(true);
-    }, [formattedToday])
+        if (item.release_date >= formattedToday) {
+            setIsUpcoming(true);
+        } else {
+            setIsUpcoming(false);
+        }
+    }, [formattedToday, item.release_date ])
     
     return(
         <div className="mediacard">

@@ -1,4 +1,10 @@
+@mixin smartphone {
+    @media (min-width: 380px) { @content; }
+}
 
+@mixin smartphoneBig {
+    @media (min-width: 590px) { @content; }
+}
 
 @mixin tablet {
     @media (min-width: 768px) { @content; }

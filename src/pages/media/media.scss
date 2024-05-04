@@ -1,4 +1,4 @@
-.Serie {
+.Media {
     position: relative;
     max-width: 1440px;
     display: flex;
@@ -23,6 +23,17 @@
             width: 100%;
             background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(20,20,20,1) 100%);
         }
+        &__fadeOSS {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+            height: 110%;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(93,5,255,1) 0%, rgba(20,20,20,1) 100%);
+        }
         &--img {
             width: 100%;
             height: 100%;
@@ -32,18 +43,27 @@
         }
     }
     &__infos {
-        margin-top: 100px;
+        margin-top: 44px;
         display: flex;
-        gap: 12px;
+        flex-direction: column;
+        align-items: center;
         width: 90%;
+        @include tabletLandscape {
+            flex-direction: row;
+            margin-top: 100px;
+            gap: 12px;
+        } 
         &__poster {
-            background-color: $darkMedium;
-            box-sizing: border-box;
-            border: solid 1px $darkLight;
-            height: 400px;
+            height: 300px;
             border-radius: 8px;
             padding: 12px;
             margin-bottom: 12px;
+            @include tabletLandscape {
+                height: 400px;
+                background-color: $darkMedium;
+                box-sizing: border-box;
+                border: solid 1px $darkLight;
+            } 
             &--img {
                 height: 100%;
                 width: auto;
@@ -55,26 +75,46 @@
             background-color: $darkMedium;
             box-sizing: border-box;
             border: solid 1px $darkLight;
-            height: 400px;
             width: 100%;
             border-radius: 8px;
             padding: 24px;
             margin-bottom: 12px;
+            @include tabletLandscape {
+                height: 400px;
+            } 
             &__title {
                 margin-bottom: 8px;
+                color: $primaryLight;
+                font-size: $h1mobile;
+                @include tablet {
+                    font-size: $h1desktop;
+                }
             }
             &__genres {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 4px;
                 margin-bottom: 24px;
             }
             &__infos {
-                display: flex;
-                gap: 24px;
+                gap: 12px;
                 margin-bottom: 24px;
+                @include smartphone {
+                    display: flex;
+                }
+                @include tablet {
+                    gap: 24px;
+                }
                 &--label {
+                    display: flex;
                     color: $grey;
                     font-weight: $medium;
+                    @include smartphone {
+                        display: none;
+                    }
+                    @include smartphoneBig {
+                        display: flex;
+                    }
                 }
                 &__field {
                     display: flex;
@@ -87,6 +127,15 @@
                     line-height: 20px;
                     &--small {
                         font-size: 12px;
+                    }
+                }
+                &--dot {
+                    display: none;
+                    @include smartphone {
+                        display: block;
+                    }
+                    @include smartphoneBig {
+                        display: none;
                     }
                 }
             }
@@ -112,6 +161,10 @@
         border-radius: 8px;
         padding: 24px;
         margin-bottom: 12px;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &__reco {
         background-color: $darkMedium;

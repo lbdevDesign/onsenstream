@@ -18,7 +18,7 @@ function useSerieRecommendationsData(param) {
         setSerieRecommendations(data.results);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return serieRecommendations;
 }

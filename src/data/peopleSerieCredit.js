@@ -19,7 +19,7 @@ function usePeopleSeriesCreditData(param) {
         console.log(data);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return peopleSeriesCredit;
 }

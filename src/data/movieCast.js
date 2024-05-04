@@ -22,7 +22,7 @@ function useMovieCast(param) {
         }
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return movieCast;
 }

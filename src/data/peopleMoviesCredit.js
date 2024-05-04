@@ -19,7 +19,7 @@ function usePeopleMoviesCreditData(param) {
         console.log(data);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return peopleMoviesCredit;
 }

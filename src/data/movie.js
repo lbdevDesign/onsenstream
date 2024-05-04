@@ -18,7 +18,7 @@ function useMovieData(param) {
         setMovieData(data);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return movieData;
 }

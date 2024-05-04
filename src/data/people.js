@@ -18,7 +18,7 @@ function usePeopleData(param) {
         setPeople(data);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return people;
 }

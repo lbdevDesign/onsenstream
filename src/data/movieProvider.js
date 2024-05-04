@@ -20,10 +20,9 @@ function useMovieProvider(param) {
           } else {
             setMovieProvider(null); 
           }
-        console.log(movieProvider);
       } 
       fetchData();
-  }, []);
+  }, [param, movieProvider]);
 
   return movieProvider;
 }

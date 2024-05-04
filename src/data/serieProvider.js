@@ -22,7 +22,7 @@ function useSerieProvider(param) {
           }
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return serieProvider;
 }

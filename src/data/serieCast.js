@@ -18,7 +18,7 @@ function useSerieCast(param) {
         setSerieCast(data.cast.filter(cast => cast.profile_path).slice(0, 20));
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return serieCast;
 }

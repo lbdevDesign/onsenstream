@@ -18,7 +18,7 @@ function useSerieData(param) {
         setSerieData(data);
       } 
       fetchData();
-  }, []);
+  }, [param]);
 
   return serieData;
 }

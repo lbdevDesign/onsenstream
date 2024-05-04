@@ -12,7 +12,7 @@ import People from './pages/people/people';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     element: <App />,
   },
   {

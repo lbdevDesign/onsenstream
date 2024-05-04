@@ -8,6 +8,7 @@ import './style/index.scss';
 import App from './pages/homepage/App';
 import Movie from './pages/movie/movie';
 import Serie from './pages/serie/serie';
+import People from './pages/people/people';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/serie/:id",
     element: <Serie />
+  },
+  {
+    path: "/people/:id",
+    element: <People />
   }
 ]);
 

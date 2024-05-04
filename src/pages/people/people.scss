@@ -1,0 +1,71 @@
+.People {
+    position: relative;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: auto;
+    margin-bottom: 300px;
+    &__infos {
+        grid-area: 1 / 1 / 4 / 2; 
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 90%;
+        &__profile {
+            background-color: $darkMedium;
+            box-sizing: border-box;
+            border: solid 1px $darkLight;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            &--img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+            &__title {
+                margin-bottom: 8px;
+                color: $primaryLight;
+                text-align: center;
+            }
+            &__infos {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                margin-bottom: 24px;
+                &--label {
+                    color: $grey;
+                    font-weight: $medium;
+                    text-align: center;
+                }
+                &__field {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 8px;
+                }
+                &__param {
+                    font-size: 16px;
+                    font-weight: $medium;
+                    line-height: 20px;
+                    text-align: center;
+                    &--small {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        &__filmo {
+            grid-area: 1 / 2 / 2 / 6;
+            margin-top: 100px;
+            box-sizing: border-box;
+            padding: 12px 24px;
+            width: 100%;
+        }
+    }
+}    

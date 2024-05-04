@@ -1,12 +1,15 @@
 .mediacastcard {
     background-color: $dark;
     border: solid 1px $darkLight;
-    width: 200px;
+    width: 150px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 12px;
+    @include tablet {
+        width: 200px;
+    }
     &:hover {
         border: solid 1px $primary;
     }

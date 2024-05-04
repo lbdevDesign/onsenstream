@@ -13,7 +13,10 @@
     }
     &__imgbox {
         position: relative;
-        width: 150px;
+        width: 100px;
+        @include tablet {
+            width: 150px;
+        }
         &__img {
             width: 100%;
             aspect-ratio: 2/3;

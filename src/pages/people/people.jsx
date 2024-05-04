@@ -22,6 +22,7 @@ function TopList() {
     const peopleSeriesCreditData = usePeopleSeriesCreditData(id);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setPeople(peopleData);
         setPeopleMoviesCredit(peopleMoviesCreditData);
         setPeopleSeriesCredit(peopleSeriesCreditData);

@@ -30,7 +30,7 @@ function Header() {
             <Link to={"/"}>
                 <img src={osesLogo} className='header__logo' alt="Logo On s'en stream" />
             </Link>
-            <div className='header__cta'>
+            {/* <div className='header__cta'>
                 {showSearchbar ? (
                     <button className='header__cta__close' onClick={display}>
                         <XMarkIcon className='header__cta__close--icon' alt='Close' />
@@ -55,7 +55,7 @@ function Header() {
                 </div>
                 <div className='header__searchfield__results'>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

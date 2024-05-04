@@ -58,7 +58,7 @@ function App() {
         <SwitchButton />
       </div> */}
       <div className="App__movies">
-        <GenreSlider title="Top films par genres" />
+        {/* <GenreSlider title="Top films par genres" /> */}
         <MediaSlider title='Films du moment' medias={upcomingMovies || []} type="movies" cta="true"/>
         <MediaSlider title='Séries populaires' medias={trendingSeries || []} type="series" cta="true"/>
         <MediaSlider title='Films populaires' medias={trendingMovies || []} type="movies" cta="true"/>

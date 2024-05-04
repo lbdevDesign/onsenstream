@@ -1,18 +1,10 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useMediaQuery } from 'react-responsive';
+import React from "react";
+import { Link } from "react-router-dom";
 
 //Molecules
-import SliderNav from "../../molecules/sliderNav/sliderNav";
 import GenreCard from "../../molecules/cards/genrecard/genreCard";
 
 function GenreSlider({ title }) {
-
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 900px)'
-  })
 
   const genreList = [
     {
@@ -77,95 +69,23 @@ function GenreSlider({ title }) {
     },
   ]
 
-  const sliderRef = useRef(null);
-
-  const settings = {
-      dots: false,
-      arrows: false,
-      dotsClass: "slick-dots slick-thumb",
-      infinite: true,
-      slidesToShow: 5,
-      slidesToScroll: 3,
-      responsive: [
-          {
-              breakpoint: 2000,
-              settings: {
-                slidesToShow: 7,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-              }
-          },
-          {
-              breakpoint: 1460,
-              settings: {
-                slidesToShow: 6,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-              }
-          },
-          {
-              breakpoint: 1240,
-              settings: {
-                slidesToShow: 5,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: true
-              }
-          },
-          {
-            breakpoint: 1020,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 2,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 840,
-            settings: {
-              slidesToScroll: 1,
-              slidesToShow: 3,
-              swipeToSlide: true
-            }
-          },
-          {
-            breakpoint: 620,
-            settings: {
-              slidesToScroll: 1,
-              slidesToShow: 2,
-              swipeToSlide: true
-            }
-          },
-        ]
-  };   
-  
-  function handleDiscoverClick() {
-    console.log("Je découvre la sélection");
-  }
-
   return (
     <div className="genreSlider">
         <div className="genreSlider__header">
             <h2 className="genreSlider__header__title">{title}</h2>
-            {isDesktop && (
-              <SliderNav 
-              onClickLeft={()=>sliderRef.current.slickPrev()} 
-              onClickRight={()=>sliderRef.current.slickNext()}
-              onClick={handleDiscoverClick}
-              />
-            )}
         </div>
 
         <div className="genreSlider__box">
           <div className="genreSlider__box__fade"></div>
-          <Slider ref={sliderRef} className="genreSlider__box__inner" {...settings}>
+          <ul className="genreSlider__box__inner">
             {genreList.map((item) => (
-              <GenreCard key={item.id} genre={item.name} />
+              <li key={item.id}>
+                <Link to="#">
+                  <GenreCard  genre={item.name} />
+                </Link>
+              </li>
             ))}
-          </Slider>
+          </ul>
         </div>
         
     </div>

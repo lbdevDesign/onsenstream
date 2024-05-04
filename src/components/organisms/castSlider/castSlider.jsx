@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Molecules
 import CastCard from "../../molecules/cards/castCard/castCard";
@@ -7,6 +8,8 @@ import CastCard from "../../molecules/cards/castCard/castCard";
 // import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton";
 
 function CastSlider({ title, casting }) {
+
+  console.log(casting);
 
     return (
         <div className="castslider">
@@ -28,8 +31,10 @@ function CastSlider({ title, casting }) {
             <div className="castslider__box__fade"></div>
             <ul className="castslider__box__inner">
               {casting.map((item) => (
-                <li>
-                    <CastCard key={item.id} {...item}/>
+                <li key={item.id}>
+                  <Link to={`/people/${item.id}`}>
+                    <CastCard {...item}/>
+                  </Link>
                 </li>
               ))}
             </ul>

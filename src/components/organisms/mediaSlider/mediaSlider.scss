@@ -1,4 +1,4 @@
-.castslider {
+.mediaSlider {
     overflow: hidden;
     width: 100%;
     margin-bottom: 48px;
@@ -9,10 +9,6 @@
         margin-bottom: 16px;
         &__title {
             color: $white;
-        }
-        &__nav {
-            display: flex;
-            gap: 8px;
         }
     }
     &__box {
@@ -25,7 +21,7 @@
             right: 44px;
             height: 100%;
             width: 5%;
-            background: linear-gradient(90deg, rgba(26,26,26,0) 0%, rgba(26,26,26,1) 100%);
+            background: linear-gradient(90deg, rgba(20,20,20,0) 0%, rgba(20,20,20,1) 100%);
         }
         &__inner {
             white-space: nowrap;
@@ -43,4 +39,5 @@
         }
     }
 }
+
 

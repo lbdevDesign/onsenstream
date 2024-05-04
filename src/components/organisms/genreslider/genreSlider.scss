@@ -27,20 +27,15 @@
             white-space: nowrap;
             display: flex;
             flex-direction: row;
+            gap: 12px;
+            list-style: none;
+            overflow-x: scroll;
+            margin-right: 44px;
+            -ms-overflow-style: none;
+            scrollbar-width: none; 
+            &:-webkit-scrollbar {
+                display: none;
+            }
         }
     }
-}
-
-.slick-slide > div {
-    margin: 0 12px;
-  }
-
-.slick-list {
-    margin: 0 -12px;
-}
-
-.slick-dots-index {
-    background-color: $white;
-    height: 4px;
-    width: 12px;
 }

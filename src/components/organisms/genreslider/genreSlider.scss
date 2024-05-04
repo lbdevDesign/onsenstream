@@ -9,6 +9,10 @@
         margin-bottom: 16px;
         &__title {
             color: $white;
+            font-size: $h2mobile;
+            @include tablet {
+                font-size: $h2desktop;
+            }
         }
     }
     &__box {

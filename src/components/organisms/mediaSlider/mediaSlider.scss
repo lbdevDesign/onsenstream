@@ -8,7 +8,12 @@
         align-items: center;
         margin-bottom: 16px;
         &__title {
+            margin-right: 8px;
             color: $white;
+            font-size: $h2mobile;
+            @include tablet {
+                font-size: $h2desktop;
+            }
         }
     }
     &__box {

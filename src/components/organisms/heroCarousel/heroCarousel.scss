@@ -81,6 +81,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 @include tabletLandscape {
+                    font-size: $h2desktop;
                     text-align: left;
                 }
             }

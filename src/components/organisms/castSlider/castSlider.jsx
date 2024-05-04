@@ -9,8 +9,6 @@ import CastCard from "../../molecules/cards/castCard/castCard";
 
 function CastSlider({ title, casting }) {
 
-  console.log(casting);
-
     return (
         <div className="castslider">
           <div className="castslider__header">

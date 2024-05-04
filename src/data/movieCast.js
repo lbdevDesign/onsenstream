@@ -15,7 +15,11 @@ function useMovieCast(param) {
       const fetchData = async () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${param}/credits?language=fr-FR`, options);
         const data = await response.json();
-        setMovieCast(data.cast.filter(cast => cast.profile_path).slice(0, 20));
+        if (data && data.cast) {
+          setMovieCast(data.cast.filter(cast => cast.profile_path).slice(0, 20));
+        } else {
+          setMovieCast(null);
+        }
       } 
       fetchData();
   }, []);

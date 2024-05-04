@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-function useMovieProvider(param) {
-  const [movieProvider, setMovieProvider] = useState([]);
+function useSerieProvider(param) {
+  const [serieProvider, setSerieProvider] = useState([]);
 
   useEffect(() => {
     const options = {
@@ -13,19 +13,18 @@ function useMovieProvider(param) {
       }
 
       const fetchData = async () => {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${param}/watch/providers`, options);
+        const response = await fetch(`https://api.themoviedb.org/3/tv/${param}/watch/providers`, options);
         const data = await response.json();
         if (data.results && data.results.FR) {
-            setMovieProvider(data.results.FR);  // Only set if flatrate exists
+            setSerieProvider(data.results.FR);  // Only set if flatrate exists
           } else {
-            setMovieProvider(null); 
+            setSerieProvider(null); 
           }
-        console.log(movieProvider);
       } 
       fetchData();
   }, []);
 
-  return movieProvider;
+  return serieProvider;
 }
 
-export default useMovieProvider;
+export default useSerieProvider;

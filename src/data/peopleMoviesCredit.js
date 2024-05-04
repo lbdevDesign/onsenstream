@@ -16,7 +16,6 @@ function usePeopleMoviesCreditData(param) {
         const response = await fetch(`https://api.themoviedb.org/3/person/${param}/movie_credits?language=fr-FR`, options);
         const data = await response.json();
         setPeopleMoviesCredit(data);
-        console.log(data);
       } 
       fetchData();
   }, [param]);

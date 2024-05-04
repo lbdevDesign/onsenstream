@@ -22,7 +22,7 @@ function useMovieProvider(param) {
           }
       } 
       fetchData();
-  }, [param, movieProvider]);
+  }, [param]);
 
   return movieProvider;
 }

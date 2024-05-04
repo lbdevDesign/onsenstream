@@ -63,11 +63,6 @@ function Serie() {
                             <></>
                         )}
                         <h1 className="Media__infos__details__title">{serie.name}</h1>
-                        <div className="Media__infos__details__genres">
-                            {serie.genres && serie.genres.map((item) => (
-                                <GenreTag key={item.id} text={item.name} />
-                            ))}
-                        </div>
                         <div className="Media__infos__details__infos">
                             <div className="Media__infos__details__infos__field">
                                 <p className="Media__infos__details__infos--label">Dernière saison :</p>
@@ -86,6 +81,11 @@ function Serie() {
                                 <p className="Media__infos__details__infos__param--small">({serie.vote_count} votes)</p>
                             </div>
                         </div>
+                        <div className="Media__infos__details__genres">
+                            {serie.genres && serie.genres.map((item) => (
+                                <GenreTag key={item.id} text={item.name} />
+                            ))}
+                        </div>
                         <div className="Media__infos__details__description">
                             <p className="Media__infos__details__description--label">Synopsis :</p>
                             <p className="Serie__infos__details__description--desc">{serie.overview}</p>
@@ -93,9 +93,11 @@ function Serie() {
 
                     </div>
                 </div>
-                <div className="Media__cast">
-                    <CastSlider title="Casting" casting={serieCast}/>
-                </div>
+                {serieCast.length > 0 && (
+                    <div className="Media__cast">
+                        <CastSlider title="Casting" casting={serieCast}/>
+                    </div>
+                )}
                 <div className="Media__reco">
                     <MediaSlider title="Recommandés" medias={serieReco || []} type="series"/>
                 </div>

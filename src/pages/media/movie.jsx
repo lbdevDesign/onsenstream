@@ -34,7 +34,7 @@ function Movie() {
         setMovieCast(movieCastData);
         setMovieProvider(movieProviderData);
         setMovieReco(movieRecoData);
-    }, [movieData, movieCastData, movieProviderData, movieRecoData,])    
+    }, [movieData, movieCastData, movieProviderData, movieRecoData])    
 
     const backdropPath = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;     
 

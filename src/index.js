@@ -26,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/people/:id",
     element: <People />
+  },
+  {
+    path: "/people/:id",
+    element: <h1>404</h1>
   }
 ]);
 

@@ -9,7 +9,6 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "dotenv": "^16.4.5",
-    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive": "^10.0.0",
@@ -21,6 +20,9 @@
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.1",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   },
   "scripts": {
     "predeploy": "npm run build",

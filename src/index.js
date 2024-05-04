@@ -27,7 +27,9 @@ const router = createBrowserRouter([
     path: "/people/:id",
     element: <People />
   }
-]);
+], {
+  basename: "/onsenstream" 
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <People />
   },
   {
-    path: "/people/:id",
+    path: "/*",
     element: <h1>404</h1>
   }
 ]);

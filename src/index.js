@@ -13,7 +13,6 @@ import People from './pages/people/people';
 const router = createBrowserRouter([
   {
     path: "/",
-    exact: true,
     element: <App />,
   },
   {

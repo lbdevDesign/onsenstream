@@ -11,7 +11,7 @@ import useSerieTopData from "../../data/serieTop";
 //Organisms
 import Header from "../../components/organisms/header/header";
 import { HeroCarousel } from "../../components/organisms/heroCarousel/heroCarousel";
-import GenreSlider from "../../components/organisms/genreslider/genreSlider";
+// import GenreSlider from "../../components/organisms/genreslider/genreSlider";
 import MediaSlider from "../../components/organisms/mediaSlider/mediaSlider";
 
 function App() {

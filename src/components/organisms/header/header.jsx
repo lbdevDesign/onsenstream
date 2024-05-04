@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 //Atoms
-import FuncButton from '../../atoms/buttons/functionalbutton/funcbutton';
+// import FuncButton from '../../atoms/buttons/functionalbutton/funcbutton';
 
 //Molecules
-import { Searchbar } from '../../molecules/searchbar/searchbar';
+// import { Searchbar } from '../../molecules/searchbar/searchbar';
 
 //Assets
 import osesLogo from '../../../assets/OSSLogo.svg';
-import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
-import {XMarkIcon} from '@heroicons/react/24/outline';
-import {UserIcon} from '@heroicons/react/24/outline';
+// import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
+// import {XMarkIcon} from '@heroicons/react/24/outline';
+// import {UserIcon} from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 function Header() {
 
-    const [showSearchbar, setSearchbar] = useState();
+    // const [showSearchbar, setSearchbar] = useState();
 
-    function display() {
-        setSearchbar(value=>!value)
-    }
+    // function display() {
+    //     setSearchbar(value=>!value)
+    // }
 
-    function handleAccountClick() {
-        console.log("J'accède à mon compte");
-    }
+    // function handleAccountClick() {
+    //     console.log("J'accède à mon compte");
+    // }
 
     return(
         <div className="header">

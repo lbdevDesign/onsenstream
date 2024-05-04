@@ -9,9 +9,9 @@ function MediaSlider({ title, medias, type, cta }) {
 
   let mediaPath;
   if (type === "movies") {
-    mediaPath = "/onsenstream/movie/"
+    mediaPath = "/movie/"
   } else if (type === "series") {
-    mediaPath = "/onsenstream/serie/"
+    mediaPath = "/serie/"
   }
 
   return (
@@ -28,7 +28,7 @@ function MediaSlider({ title, medias, type, cta }) {
         <ul className="mediaSlider__box__inner">
           {medias.map((item) => (
             <li key={item.id}>
-                <Link onClick={() => {window.location.href=`${mediaPath}${item.id}`}}>
+                <Link to={`${mediaPath}${item.id}`} >
                     <MediaCard {...item}/>
                 </Link>
             </li>

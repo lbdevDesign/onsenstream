@@ -30,7 +30,7 @@ function CastSlider({ title, casting }) {
             <ul className="castslider__box__inner">
               {casting.map((item) => (
                 <li key={item.id}>
-                  <Link to={`/onsenstream/people/${item.id}`}>
+                  <Link to={`/people/${item.id}`}>
                     <CastCard {...item}/>
                   </Link>
                 </li>

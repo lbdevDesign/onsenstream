@@ -1,0 +1,111 @@
+.Mediainfos {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    @include tabletLandscape {
+        flex-direction: row;
+        margin-top: 100px;
+        gap: 12px;
+    } 
+    &__poster {
+        height: 300px;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 12px;
+        @include tabletLandscape {
+            height: 400px;
+            background-color: $darkMedium;
+            box-sizing: border-box;
+            border: solid 1px $darkLight;
+        } 
+        &--img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+    &__details {
+        background-color: $darkMedium;
+        box-sizing: border-box;
+        border: solid 1px $darkLight;
+        width: 100%;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 12px;
+        @include tabletLandscape {
+            height: 400px;
+        } 
+        &__title {
+            margin-bottom: 12px;
+            color: $primaryLight;
+            font-size: $h1mobile;
+            @include tablet {
+                font-size: $h1desktop;
+            }
+        }
+        &__genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+        &__infos {
+            gap: 12px;
+            margin-bottom: 24px;
+            @include smartphone {
+                display: flex;
+            }
+            @include tablet {
+                gap: 24px;
+            }
+            &--label {
+                display: flex;
+                color: $grey;
+                font-weight: $medium;
+                @include smartphone {
+                    display: none;
+                }
+                @include smartphoneBig {
+                    display: flex;
+                }
+            }
+            &__field {
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
+            }
+            &__param {
+                font-size: 16px;
+                font-weight: $medium;
+                line-height: 20px;
+                &--small {
+                    font-size: 12px;
+                }
+            }
+            &--dot {
+                display: none;
+                @include smartphone {
+                    display: block;
+                }
+                @include smartphoneBig {
+                    display: none;
+                }
+            }
+        }
+        &__description {
+            &--label {
+                color: $grey;
+                font-weight: $medium;
+                margin-bottom: 4px;
+            }
+            &--desc {
+                color: $white;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}

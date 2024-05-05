@@ -51,15 +51,17 @@ function Movie() {
                         <div className="Media__backdrop__fadeOSS"></div>
                     </div>
                 )}
-               <MediaInfos data={movie} provider={movieProvider} />
+                <div className="Media__infos">
+                    <MediaInfos data={movie} provider={movieProvider} type="movie"/>
+                </div>
                 {movieCast.length > 0 && (
                     <div className="Media__cast">
-                        <CastSlider title="Casting" casting={movieCast}/>
+                        <CastSlider title="Casting" casting={movieCast} />
                     </div>
                 )}
                 {movieReco.length > 0 && (
                     <div className="Media__reco">
-                        <MediaSlider title="Recommandés" medias={movieReco || []} type="movies"/>
+                        <MediaSlider title="Recommandés" medias={movieReco || []} type="movies" />
                     </div>
                 )}
             </div>

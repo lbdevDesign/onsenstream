@@ -41,25 +41,27 @@ function Serie() {
         <>
             <Header />
             <div className="Media">
-            {serie.backdrop_path ? (
-                <div className="Media__backdrop">
-                    <div className="Media__backdrop__fade"></div>
-                    <img className="Media__backdrop--img" src={backdropPath} alt={`backdrop ${serie.title}`} />
+                {serie.backdrop_path ? (
+                    <div className="Media__backdrop">
+                        <div className="Media__backdrop__fade"></div>
+                        <img className="Media__backdrop--img" src={backdropPath} alt={`backdrop ${serie.title}`} />
+                    </div>
+                ) : (
+                    <div className="Media__backdrop">
+                        <div className="Serie__backdrop__fadeOSS"></div>
+                    </div>
+                )}
+                <div className="Media__infos">
+                    <MediaInfos data={serie} provider={serieProvider} type="serie"/>
                 </div>
-            ) : (
-                <div className="Media__backdrop">
-                    <div className="Serie__backdrop__fadeOSS"></div>
-                </div>
-            )}
-                <MediaInfos data={serie} provider={serieProvider} />
                 {serieCast.length > 0 && (
                     <div className="Media__cast">
-                        <CastSlider title="Casting" casting={serieCast}/>
+                        <CastSlider title="Casting" casting={serieCast} />
                     </div>
                 )}
                 {serieReco.length > 0 && (
                     <div className="Media__reco">
-                        <MediaSlider title="Recommandés" medias={serieReco || []} type="series"/>
+                        <MediaSlider title="Recommandés" medias={serieReco || []} type="series" />
                     </div>
                 )}
             </div>

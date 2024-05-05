@@ -3,16 +3,11 @@ import React from "react";
 function ProviderTag({ provider }) {
 
     const providerPath = `https://image.tmdb.org/t/p/w500${provider.logo_path}`; 
-    console.log(provider);
     let backgroundStyle;
 
     if (provider.provider_name === "Netflix") {
         backgroundStyle = {
             backgroundImage: "linear-gradient(130deg, rgba(224,3,9,1) 0%, rgba(165,2,6,1) 100%)",
-        };
-    } else if (provider.provider_name === "Canal+" || provider.provider_name === "Apple Tv Plus" || provider.provider_name === "Apple Tv") {
-        backgroundStyle = {
-            backgroundImage: "linear-gradient(130deg, rgba(60,60,60,1) 0%, rgba(35,35,35,1) 100%)",
         };
     } else if (provider.provider_name === "Disney Plus") {
         backgroundStyle = {
@@ -29,6 +24,10 @@ function ProviderTag({ provider }) {
     } else if (provider.provider_name === "TF1") {
         backgroundStyle = {
             backgroundImage: "linear-gradient(130deg, rgba(56,85,190,1) 0%, rgba(136,6,55,1) 100%)",
+        };
+    } else {
+        backgroundStyle = {
+            backgroundImage: "linear-gradient(130deg, rgba(60,60,60,1) 0%, rgba(35,35,35,1) 100%)",
         };
     }
 

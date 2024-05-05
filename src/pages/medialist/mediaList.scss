@@ -1,0 +1,49 @@
+.Medialist {
+    position: relative;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 300px;
+    &__backdrop {
+        z-index: -10;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        &__fadeOSS {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+            height: 110%;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(93,5,255,1) 0%, rgba(20,20,20,1) 100%);
+        }
+    }
+    &__title {
+        background-color: $darkMedium;
+        box-sizing: border-box;
+        border: solid 1px $darkLight;
+        width: 90%;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 12px;
+        margin-top: 44px;
+        max-width: 1440px;
+        &--title {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__results {
+        margin-top: 44px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+}

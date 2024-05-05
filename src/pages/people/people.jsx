@@ -27,8 +27,6 @@ function TopList() {
         setPeopleMoviesCredit(peopleMoviesCreditData);
         setPeopleSeriesCredit(peopleSeriesCreditData);
     }, [peopleData, peopleMoviesCreditData, peopleSeriesCreditData])
-
-    console.log(people.biography);
     
     return (
         <>

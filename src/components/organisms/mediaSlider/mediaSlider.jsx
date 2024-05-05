@@ -18,8 +18,10 @@ function MediaSlider({ title, medias, type, cta }) {
     <div className="mediaSlider">
       <div className="mediaSlider__header">
         <h2 className="mediaSlider__header__title">{title}</h2>
-        {cta === "true" ? (
-          <CtaButton>Découvrir</CtaButton>
+        {cta? (
+          <Link to={`/medialist/${cta}`}>
+            <CtaButton>Découvrir</CtaButton>
+          </Link>
         ) : (<></>)}
       </div>
 

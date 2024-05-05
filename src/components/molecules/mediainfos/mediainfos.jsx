@@ -4,8 +4,7 @@ import React from "react";
 import ProviderTag from "../../atoms/tags/providertags/providerTag";
 import GenreTag from "../../atoms/tags/genretags/genreTag";
 
-function MediaInfos({ data, provider}) {
-
+function MediaInfos({ data, provider, type}) {
 
     return(
         <div className="Mediainfos">
@@ -18,16 +17,37 @@ function MediaInfos({ data, provider}) {
                 ) : (
                     <></>
                 )}
-                <h1 className="Mediainfos__details__title">{data.title}</h1>
+                <h1 className="Mediainfos__details__title">{type === "movie" ? data.title : data.name}</h1>
                 <div className="Mediainfos__details__infos">
                     <div className="Mediainfos__details__infos__field">
-                        <p className="Mediainfos__details__infos--label">Sortie :</p>
-                        <p className="Mediainfos__details__infos__param">{ data.release_date ? data.release_date.slice(0, 4) : ""}</p>
+                        {type === "movie" && (
+                            <>
+                                <p className="Mediainfos__details__infos--label">Sortie :</p>
+                                <p className="Mediainfos__details__infos__param">{ data.release_date ? data.release_date.slice(0, 4) : ""}</p>
+                            </>
+                        )}
+                        {type === "serie" && (
+                            <>
+                                <p className="Mediainfos__details__infos--label">Première saison :</p>
+                                <p className="Mediainfos__details__infos__param">{ data.first_air_date ? data.first_air_date.slice(0, 4) : ""}</p>
+                            </>
+                        )}
                     </div>
                     <p className="Mediainfos__details__infos--dot">•</p>
                     <div className="Mediainfos__details__infos__field">
-                        <p className="Mediainfos__details__infos--label">Durée :</p>
-                        <p className="Mediainfos__details__infos__param">{data.runtime} min</p>
+                        {type === "movie" && (
+                            <>
+                                <p className="Mediainfos__details__infos--label">Durée :</p>
+                                <p className="Mediainfos__details__infos__param">{data.runtime} min</p>
+                            </>
+                        )}
+                        {type === "serie" && (
+                            <>
+                                <p className="Mediainfos__details__infos--label">Cycles :</p>
+                                <p className="Mediainfos__details__infos__param">{ data.number_of_seasons}</p>
+                                <p className="Mediainfos__details__infos__param--small">{data.number_of_seasons > 0 ? "saisons" : "saison"}</p>
+                            </>
+                        )}
                     </div>
                     <p className="Mediainfos__details__infos--dot">•</p>
                     <div className="Mediainfos__details__infos__field">

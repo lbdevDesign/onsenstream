@@ -98,9 +98,11 @@ function Serie() {
                         <CastSlider title="Casting" casting={serieCast}/>
                     </div>
                 )}
-                <div className="Media__reco">
-                    <MediaSlider title="Recommandés" medias={serieReco || []} type="series"/>
-                </div>
+                {serieReco.length > 0 && (
+                    <div className="Media__reco">
+                        <MediaSlider title="Recommandés" medias={serieReco || []} type="series"/>
+                    </div>
+                )}
             </div>
         </>
     )

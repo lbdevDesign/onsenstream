@@ -94,12 +94,16 @@ function Movie() {
                     
                     </div>
                 </div>
-                <div className="Media__cast">
-                    <CastSlider title="Casting" casting={movieCast}/>
-                </div>
-                <div className="Media__reco">
-                    <MediaSlider title="Recommandés" medias={movieReco || []} type="movies"/>
-                </div>
+                {movieCast.length > 0 && (
+                    <div className="Media__cast">
+                        <CastSlider title="Casting" casting={movieCast}/>
+                    </div>
+                )}
+                {movieReco.length > 0 && (
+                    <div className="Media__reco">
+                        <MediaSlider title="Recommandés" medias={movieReco || []} type="movies"/>
+                    </div>
+                )}
             </div>
         </>
     )

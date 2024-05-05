@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import './style/index.scss';
@@ -10,7 +10,7 @@ import Movie from './pages/media/movie';
 import Serie from './pages/media/serie';
 import People from './pages/people/people';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,

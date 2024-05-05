@@ -59,11 +59,11 @@ function App() {
       </div> */}
       <div className="App__movies">
         {/* <GenreSlider title="Top films par genres" /> */}
-        <MediaSlider title='Films du moment' medias={upcomingMovies || []} type="movies" cta="true"/>
-        <MediaSlider title='Séries populaires' medias={trendingSeries || []} type="series" cta="true"/>
-        <MediaSlider title='Films populaires' medias={trendingMovies || []} type="movies" cta="true"/>
-        <MediaSlider title='Séries les mieux notées' medias={topSeries || []} type="series" cta="true"/>
-        <MediaSlider title='Films les mieux notés' medias={topMovies || []} type="movies" cta="true"/>
+        <MediaSlider title='Films du moment' medias={upcomingMovies || []} type="movies" cta="upcomingmovies"/>
+        <MediaSlider title='Séries populaires' medias={trendingSeries || []} type="series" cta="trendingseries"/>
+        <MediaSlider title='Films populaires' medias={trendingMovies || []} type="movies" cta="trendingmovies"/>
+        <MediaSlider title='Séries les mieux notées' medias={topSeries || []} type="series" cta="topseries"/>
+        <MediaSlider title='Films les mieux notés' medias={topMovies || []} type="movies" cta="topmovies"/>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@
 @import "../pages/homepage/App.scss";
 @import "../pages/media/media.scss";
 @import "../pages/people/people.scss";
+@import "../pages/medialist/mediaList.scss";
 
 //Organisms
 @import "../components/organisms/header/header.scss";
@@ -24,6 +25,7 @@
 @import "../components/molecules/cards/castCard/castCard.scss";
 @import "../components/molecules/cards/mediaCastCard/mediaCastCard.scss";
 @import "../components/molecules/mediainfos/mediainfos.scss";
+@import "../components/molecules/medialistitem/mediaListItem.scss";
 
 //Atoms
 @import "../components/atoms/buttons/ctabutton/ctabutton.scss";

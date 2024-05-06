@@ -8,9 +8,13 @@ function MediaInfos({ data, provider, type}) {
 
     return(
         <div className="Mediainfos">
-            <div className="Mediainfos__poster" >
-                <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} className="Mediainfos__poster--img" alt={`${data.title} poster`}/>
-            </div>
+            {data.poster_path ? (
+                <div className="Mediainfos__poster" >
+                    <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} className="Mediainfos__poster--img" alt={`${data.title} poster`}/>
+                </div>
+            ) : (
+                <></>
+            )}
             <div className="Mediainfos__details">
                 {provider?.flatrate? (
                     <ProviderTag provider={provider.flatrate[0]} />

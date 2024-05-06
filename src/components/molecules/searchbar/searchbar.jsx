@@ -5,18 +5,25 @@ import CtaButton from "../../atoms/buttons/ctabutton/ctabutton";
 
 //Assets
 import {MagnifyingGlassIcon} from '@heroicons/react/24/solid';
+import {XMarkIcon} from '@heroicons/react/24/outline';
 
 export const Searchbar = (props) => {
 
-    const handleClick = () => {
-        console.log('button clicked !');
-    }
-
     return (
-        <div className="inputSearch">
-            <input className="inputSearch__input" placeholder={props.placeholder} />
-            <CtaButton variant="square" onClick={handleClick}>
-                <MagnifyingGlassIcon className="icons" alt="Search"/>
+        <div className="inputSearch" onClick={(event) => event.stopPropagation()}>
+            <input
+                className="inputSearch__input"
+                placeholder={props.placeholder}
+                onClick={(event) => event.stopPropagation()}
+                {...props} // Pass through other props as needed
+            />
+            <CtaButton variant="square" onClick={props.onClick}>
+                {props.icon === "cross" && (
+                    <XMarkIcon className="icons" alt="Search"/>
+                )}
+                {props.icon === "glass" && (
+                    <MagnifyingGlassIcon className="icons" alt="Search"/>
+                )}
             </CtaButton>
         </div>
     )

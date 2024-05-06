@@ -69,13 +69,7 @@ function Header() {
                     <img src={osesLogo} className='header__top__logo' alt="Logo On s'en stream" />
                 </Link>
                 <div className='header__top__cta'>
-                    {showSearchbar ? (
-                        <div className='header__top__cta__mobile'>
-                            <FuncButton onClick={handleClose}>
-                                <XMarkIcon className='header__top__cta__mobile__close--icon' alt='Close' />
-                            </FuncButton>
-                        </div>
-                    ) : (
+                    {!showSearchbar && (
                         <>
                             <div className='header__top__cta__search'>
                                 <CtaButton variant="square"  onClick={handleDisplay}>
@@ -103,7 +97,7 @@ function Header() {
                     <Searchbar 
                         placeholder='Film, genre, acteur...'
                         onChange={handleInputChange}
-                        onClick={handleClose}
+                        function={handleClose}
                         icon={showSerchField ? "cross" : "glass"}
                     />
                 </div>

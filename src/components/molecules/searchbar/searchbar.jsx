@@ -17,7 +17,7 @@ export const Searchbar = (props) => {
                 onClick={(event) => event.stopPropagation()}
                 {...props} // Pass through other props as needed
             />
-            <CtaButton variant="square" onClick={props.onClick}>
+            <CtaButton variant="square" onClick={props.function}>
                 {props.icon === "cross" && (
                     <XMarkIcon className="icons" alt="Search"/>
                 )}

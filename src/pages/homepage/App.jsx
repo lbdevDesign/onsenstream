@@ -47,25 +47,27 @@ function App() {
   const top5Trendings = trending.slice(0, 5);
 
   return (
-    <div className="App">
-      <div className="App__header">
-        <Header />
+    <>
+      <div className="App">
+        <div className="App__header">
+          <Header />
+        </div>
+        <div className="App__hero">
+          <HeroCarousel trend={top5Trendings}/>
+        </div>
+        {/* <div className="App__switch">
+          <SwitchButton />
+        </div> */}
+        <div className="App__movies">
+          {/* <GenreSlider title="Top films par genres" /> */}
+          <MediaSlider title='Films du moment' medias={upcomingMovies || []} type="movies" cta="upcomingmovies"/>
+          <MediaSlider title='Séries populaires' medias={trendingSeries || []} type="series" cta="trendingseries"/>
+          <MediaSlider title='Films populaires' medias={trendingMovies || []} type="movies" cta="trendingmovies"/>
+          <MediaSlider title='Séries les mieux notées' medias={topSeries || []} type="series" cta="topseries"/>
+          <MediaSlider title='Films les mieux notés' medias={topMovies || []} type="movies" cta="topmovies"/>
+        </div>
       </div>
-      <div className="App__hero">
-        <HeroCarousel trend={top5Trendings}/>
-      </div>
-      {/* <div className="App__switch">
-        <SwitchButton />
-      </div> */}
-      <div className="App__movies">
-        {/* <GenreSlider title="Top films par genres" /> */}
-        <MediaSlider title='Films du moment' medias={upcomingMovies || []} type="movies" cta="upcomingmovies"/>
-        <MediaSlider title='Séries populaires' medias={trendingSeries || []} type="series" cta="trendingseries"/>
-        <MediaSlider title='Films populaires' medias={trendingMovies || []} type="movies" cta="trendingmovies"/>
-        <MediaSlider title='Séries les mieux notées' medias={topSeries || []} type="series" cta="topseries"/>
-        <MediaSlider title='Films les mieux notés' medias={topMovies || []} type="movies" cta="topmovies"/>
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -15,6 +15,8 @@ export const HeroCarousel = ({ trend }) => {
     const [paused, setPaused] = useState(false);
 
     useEffect(() => {
+        const preLoadImages = trend.map(item => new Image().src = `https://image.tmdb.org/t/p/w500${item.backdrop_path}`);
+
         const interval = setInterval(() => {
             if (!paused) {
                 updateIndex(activeIndex + 1);
@@ -56,7 +58,7 @@ export const HeroCarousel = ({ trend }) => {
 
                 {trend.map((item) => (
                     <div key={item.id} className="heroCarousel__item" >
-                        <img className="heroCarousel__item__background" src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt={`background ${item.title}`} />
+                        <img className="heroCarousel__item__background" src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`} alt={`background ${item.title}`} loading="lazy" />
                         <div className="heroCarousel__item__cadre" >
                             <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} className="heroCarousel__item__cadre__img" alt={item.title}/>
                         </div>

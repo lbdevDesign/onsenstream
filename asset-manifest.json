@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/onsenstream/static/css/main.d24aa23d.css",
-    "main.js": "/onsenstream/static/js/main.8fe4534c.js",
+    "main.js": "/onsenstream/static/js/main.660b8423.js",
     "static/media/OSSLogo.svg": "/onsenstream/static/media/OSSLogo.b88b0445a79a493dfe0f4f1a8b2d6a9c.svg",
     "index.html": "/onsenstream/index.html",
     "main.d24aa23d.css.map": "/onsenstream/static/css/main.d24aa23d.css.map",
-    "main.8fe4534c.js.map": "/onsenstream/static/js/main.8fe4534c.js.map"
+    "main.660b8423.js.map": "/onsenstream/static/js/main.660b8423.js.map"
   },
   "entrypoints": [
     "static/css/main.d24aa23d.css",
-    "static/js/main.8fe4534c.js"
+    "static/js/main.660b8423.js"
   ]
 }

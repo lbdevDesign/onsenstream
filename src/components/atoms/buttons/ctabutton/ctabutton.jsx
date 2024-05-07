@@ -2,7 +2,7 @@ import React from "react";
 
 //Assets
 
-function CtaButton({ variant, children, onClick }) {
+function CtaButton({ variant, children, onClick, label }) {
 
     let styleCtaButon;
     if (variant === "square") {
@@ -14,7 +14,7 @@ function CtaButton({ variant, children, onClick }) {
     }
 
     return(
-        <button className="ctabutton" style={styleCtaButon} onClick={onClick}>
+        <button className="ctabutton" style={styleCtaButon} onClick={onClick} aria-label={label}>
             {children}
         </button>
     )

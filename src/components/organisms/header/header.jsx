@@ -12,13 +12,11 @@ import SearchResults from '../searchresults/searchResults';
 import { Searchbar } from '../../molecules/searchbar/searchbar';
 
 //Atoms
-import FuncButton from "../../atoms/buttons/functionalbutton/funcbutton"
 import CtaButton from '../../atoms/buttons/ctabutton/ctabutton';
 
 //Assets
 import osesLogo from '../../../assets/OSSLogo.svg';
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
-import {XMarkIcon} from '@heroicons/react/24/outline';
 
 // import {UserIcon} from '@heroicons/react/24/outline';
 
@@ -72,7 +70,7 @@ function Header() {
                     {!showSearchbar && (
                         <>
                             <div className='header__top__cta__search'>
-                                <CtaButton variant="square"  onClick={handleDisplay}>
+                                <CtaButton variant="square"  onClick={handleDisplay} label="Rechercher">
                                     <MagnifyingGlassIcon className="icons" alt='Search' />
                                 </CtaButton>
                             </div>

@@ -19,7 +19,7 @@ function MediaCard({ ...item }) {
     return(
         <div className="mediacard">
             <div className="mediacard__imgbox">
-                <img src={coverPath} className="mediacard__imgbox__img" alt={item.title}/>
+                <img src={coverPath} className="mediacard__imgbox__img" alt={item.title ? item.title : item.name}/>
                 { isUpcoming && (<p className="mediacard__imgbox__soon">bientôt</p> )}
             </div>
             <p className="mediacard__title">{item.title ? item.title : item.name}</p>

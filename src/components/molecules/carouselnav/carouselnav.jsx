@@ -31,6 +31,7 @@ function CarouselNav({ data, currentIndex, updateIndex }) {
                             onClick={() => { updateIndex(index)}} 
                             index={index} 
                             data={currentIndex}
+                            label={`Vers la slide ${index}`}
                         />
                     )
                 })}

@@ -5,7 +5,7 @@ import CtaButton from "../../atoms/buttons/ctabutton/ctabutton";
 import MediaCard from "../../molecules/cards/mediacard/mediaCard";
 import { Link } from "react-router-dom";
 
-function MediaSlider({ title, medias, type, cta }) {
+function MediaSlider({ title, medias, type, cta, handleClose }) {
 
   let mediaPath;
   if (type === "movies") {
@@ -30,7 +30,7 @@ function MediaSlider({ title, medias, type, cta }) {
         <ul className="mediaSlider__box__inner">
           {medias.map((item) => (
             <li key={item.id}>
-                <Link to={`${mediaPath}${item.id}`} >
+                <Link to={`${mediaPath}${item.id}`} onClick={handleClose}>
                     <MediaCard {...item}/>
                 </Link>
             </li>

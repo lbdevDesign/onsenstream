@@ -107,7 +107,7 @@ function Header() {
                     <h2>Aucun Résultas</h2>
                 ) : (
                     <div className='header__searchfield__results'>
-                        <SearchResults movies={movieResultsFiltered} series={serieResultsFiltered} />
+                        <SearchResults movies={movieResultsFiltered} series={serieResultsFiltered} handleClose={handleClose}/>
                     </div>
                 )}
             </div> 
